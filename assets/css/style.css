@@ -904,3 +904,7 @@ body.dark .teaching-photo-text .eyebrow { color: #ffe6a3; }
     max-height: 150px !important;
   }
 }
+
+
+/* Teaching page v8: fixed-size classroom image frame */
+.class-photo-fixed-section{padding:28px 0 10px!important}.class-photo-fixed-card{max-width:760px!important;margin:0 auto!important;padding:18px!important;border-radius:24px!important;background:var(--card,#fff)!important;border:1px solid var(--border,rgba(30,41,59,.12))!important;box-shadow:0 18px 45px rgba(15,23,42,.10)!important}.class-photo-fixed-text{text-align:center!important;margin:0 auto 14px!important;max-width:620px!important}.class-photo-fixed-frame{width:640px!important;max-width:100%!important;height:220px!important;margin:0 auto!important;overflow:hidden!important;border-radius:18px!important;background:#eef2f7!important}.class-photo-fixed-frame img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;max-width:none!important;max-height:none!important}@media(min-width:1100px){.class-photo-fixed-card{max-width:720px!important}.class-photo-fixed-frame{width:600px!important;height:205px!important}}@media(max-width:760px){.class-photo-fixed-card{max-width:92vw!important;padding:14px!important}.class-photo-fixed-frame{width:100%!important;height:185px!important}.class-photo-fixed-text h2{font-size:20px!important}}@media(max-width:520px){.class-photo-fixed-frame{height:155px!important}}
