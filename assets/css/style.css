@@ -833,3 +833,74 @@ body.dark .teaching-photo-text .eyebrow { color: #ffe6a3; }
     flex: 0 0 92px;
   }
 }
+
+/* Teaching page v7: desktop-friendly compact class photo */
+.teaching-photo-section {
+  padding: 22px 0 4px !important;
+}
+.teaching-photo-feature {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 380px) !important;
+  align-items: center !important;
+  gap: 18px !important;
+  max-width: 980px !important;
+  padding: 16px !important;
+  margin: 0 auto !important;
+  border-radius: 26px !important;
+}
+.teaching-photo-text {
+  min-height: 160px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+.teaching-photo-text h2 {
+  font-size: clamp(21px, 1.8vw, 27px) !important;
+}
+.teaching-photo-card {
+  width: 100% !important;
+  max-width: 380px !important;
+  height: 180px !important;
+  max-height: 180px !important;
+  justify-self: end !important;
+  border-radius: 20px !important;
+}
+.teaching-photo-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+@media (min-width: 1100px) {
+  .teaching-photo-feature {
+    max-width: 900px !important;
+  }
+  .teaching-photo-card {
+    max-width: 340px !important;
+    height: 165px !important;
+    max-height: 165px !important;
+  }
+}
+@media (max-width: 760px) {
+  .teaching-photo-feature {
+    grid-template-columns: 1fr !important;
+    max-width: 92vw !important;
+    gap: 12px !important;
+  }
+  .teaching-photo-text {
+    min-height: auto !important;
+  }
+  .teaching-photo-card {
+    max-width: none !important;
+    width: 100% !important;
+    height: 170px !important;
+    max-height: 170px !important;
+    justify-self: stretch !important;
+  }
+}
+@media (max-width: 520px) {
+  .teaching-photo-card {
+    height: 150px !important;
+    max-height: 150px !important;
+  }
+}
