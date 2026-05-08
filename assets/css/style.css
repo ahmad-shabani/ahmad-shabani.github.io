@@ -304,17 +304,18 @@ body.dark .role-badge.violet { color: #d8c8ff; }
 }
 body.dark .role-badge.cyan { color: #a8ecff; }
 .institution-mark {
-  width: 62px;
-  height: 62px;
-  flex: 0 0 62px;
-  border-radius: 22px;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 14px;
   display: grid;
   place-items: center;
-  font-weight: 950;
-  letter-spacing: -.04em;
+  font-size: 18px;
+  line-height: 1;
   color: #241706;
-  background: linear-gradient(135deg, var(--gold), #fff2bf);
-  box-shadow: 0 16px 30px rgba(17,24,47,.10);
+  background: linear-gradient(135deg, rgba(244,201,93,.78), #fff2bf);
+  box-shadow: 0 10px 22px rgba(17,24,47,.08);
+  border: 1px solid rgba(244,201,93,.45);
 }
 .info-grid {
   display: flex;
@@ -359,6 +360,22 @@ body.dark .role-badge.cyan { color: #a8ecff; }
   background: linear-gradient(180deg, var(--surface), var(--surface-2));
   font-weight: 780;
   line-height: 1.38;
+  color: var(--text);
+  text-decoration: none;
+}
+.course-link {
+  align-items: center;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.course-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(114,81,181,.42);
+  box-shadow: 0 14px 28px rgba(17,24,47,.10);
+}
+.external-mark {
+  margin-left: auto;
+  color: var(--purple);
+  font-weight: 950;
 }
 .course-icon {
   color: var(--purple);
@@ -373,7 +390,7 @@ body.dark .role-badge.cyan { color: #a8ecff; }
 @media (max-width: 640px) {
   .teaching-card { padding: 22px 18px 22px 22px; }
   .teaching-card-head { align-items: flex-start; }
-  .institution-mark { width: 50px; height: 50px; flex-basis: 50px; border-radius: 18px; font-size: 14px; }
+  .institution-mark { width: 36px; height: 36px; flex-basis: 36px; border-radius: 13px; font-size: 17px; }
   .course-grid { grid-template-columns: 1fr; }
   .info-chip { width: 100%; }
 }
