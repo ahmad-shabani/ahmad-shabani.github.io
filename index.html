@@ -5,6 +5,146 @@
   <title>Ahmad Shabani | Hardware & Computer Security Researcher</title>
   <meta name="description" content="Personal academic website of Ahmad Shabani, researcher in hardware security, computer security, digital ASIC design, Hardware Trojans, PUFs, and GPU microarchitectural security.">
   <link rel="stylesheet" href="assets/css/style.css">
+<style>
+    /* Home research interests section */
+    .home-research-section {
+      padding: 34px 0;
+    }
+
+    .home-research-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 231, 136, 0.20), transparent 34%),
+        radial-gradient(circle at 92% 0%, rgba(112, 215, 255, 0.16), transparent 34%),
+        var(--card, #ffffff);
+      border: 1px solid var(--border, rgba(30,41,59,0.12));
+      box-shadow: 0 18px 44px rgba(15, 23, 42, 0.10);
+      padding: 22px;
+    }
+
+    body.dark .home-research-card {
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 231, 136, 0.13), transparent 34%),
+        radial-gradient(circle at 92% 0%, rgba(112, 215, 255, 0.11), transparent 34%),
+        rgba(17, 24, 39, 0.92);
+      border-color: rgba(255,255,255,0.10);
+    }
+
+    .home-research-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .home-research-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #111827;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      font-size: 0.72rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+    }
+
+    .home-research-header h2 {
+      margin: 8px 0 0;
+      color: var(--text, #111827);
+      font-size: clamp(1.45rem, 2.4vw, 2.2rem);
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+    }
+
+    body.dark .home-research-header h2 {
+      color: #eef4ff;
+    }
+
+    .home-research-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .home-research-item {
+      position: relative;
+      padding: 14px;
+      min-height: 128px;
+      border-radius: 22px;
+      border: 1px solid rgba(125, 215, 255, 0.18);
+      background:
+        linear-gradient(135deg, rgba(125, 215, 255, 0.10), transparent 58%),
+        rgba(255,255,255,0.58);
+    }
+
+    body.dark .home-research-item {
+      background:
+        linear-gradient(135deg, rgba(125, 215, 255, 0.08), transparent 58%),
+        rgba(255,255,255,0.035);
+      border-color: rgba(255,255,255,0.10);
+    }
+
+    .home-research-icon {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      color: #111827;
+      font-size: 0.78rem;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+    }
+
+    .home-research-item:nth-child(2) .home-research-icon {
+      background: linear-gradient(135deg, #b2ffd8, #6de2ac);
+    }
+
+    .home-research-item:nth-child(3) .home-research-icon {
+      background: linear-gradient(135deg, #d9c8ff, #9a6cff);
+    }
+
+    .home-research-item:nth-child(4) .home-research-icon {
+      background: linear-gradient(135deg, #bdefff, #70d7ff);
+    }
+
+    .home-research-item:nth-child(5) .home-research-icon {
+      background: linear-gradient(135deg, #fff1a8, #ffb86b);
+    }
+
+    .home-research-item h3 {
+      margin: 0;
+      color: var(--text, #111827);
+      font-size: 0.86rem;
+      line-height: 1.28;
+      font-weight: 950;
+      letter-spacing: -0.015em;
+    }
+
+    body.dark .home-research-item h3 {
+      color: #eef4ff;
+    }
+
+    @media (max-width: 980px) {
+      .home-research-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .home-research-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+</style>
 </head>
 <body>
 <header class="topbar">
@@ -47,6 +187,43 @@
   </div>
 </section>
 
+
+
+  <section class="section home-research-section" id="research-interests">
+    <div class="container">
+      <div class="home-research-card">
+        <div class="home-research-header">
+          <div>
+            <span class="home-research-kicker">Research interests</span>
+            <h2>Security-aware hardware and computer systems</h2>
+          </div>
+        </div>
+
+        <div class="home-research-grid">
+          <article class="home-research-item">
+            <span class="home-research-icon">HT</span>
+            <h3>Hardware Trojans & Security</h3>
+          </article>
+          <article class="home-research-item">
+            <span class="home-research-icon">PUF</span>
+            <h3>PUF-Based Authentication</h3>
+          </article>
+          <article class="home-research-item">
+            <span class="home-research-icon">DfT</span>
+            <h3>Design for Hardware Trust</h3>
+          </article>
+          <article class="home-research-item">
+            <span class="home-research-icon">LP</span>
+            <h3>Low-Power VLSI Design</h3>
+          </article>
+          <article class="home-research-item">
+            <span class="home-research-icon">µA</span>
+            <h3>Transient Microarchitectural Attacks</h3>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
 <section class="section compact">
   <div class="container grid three">
     <article class="card accent"><div class="icon">▣</div><h3>Research identity</h3><p>Security across abstraction layers: from microarchitecture and processor behavior down to digital circuits and physical-level hardware trust.</p></article>
