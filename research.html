@@ -1,39 +1,293 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Research | Ahmad Shabani</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header class="topbar">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research & Publications | Ahmad Shabani</title>
+  <meta name="description" content="Research and publications of Ahmad Shabani in hardware security, processor/GPU security, Hardware Trojan detection, PUF-based authentication, and VLSI design.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
   <div class="container nav">
     <a class="brand" href="index.html"><span class="logo">AS</span><span>Ahmad Shabani</span></a>
     <button class="mobile-menu" data-nav-toggle>Menu</button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
+      <a class="active" href="research.html">Research</a>
       <a href="education.html">Education</a>
       <a href="experience.html">Experience</a>
       <a href="teaching.html">Teaching</a>
       <a href="projects.html">Projects</a>
       <a href="awards.html">Awards</a>
       <a href="contact.html">Contact</a>
-      <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank">CV</a>
+      <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">CV</a>
       <button type="button" data-theme-toggle>◐</button>
     </nav>
   </div>
 </header>
-<main><section class="page-hero"><div class="container"><div class="eyebrow">Research Agenda</div><h1>Security from circuits to microarchitecture.</h1><p>A research program centered on trustworthy hardware, processor security, side channels, covert channels, and practical countermeasures.</p></div></section>
-<section class="section"><div class="container split"><aside class="sidebar"><div class="card"><h3>Core themes</h3><div class="tags"><span class="tag">Hardware Trust</span><span class="tag">Trojan Detection</span><span class="tag">PUFs</span><span class="tag">GPU Security</span><span class="tag">Side Channels</span><span class="tag">ASIC Design</span></div></div></aside><div class="grid">
-<article class="card accent"><h3>Processor and GPU security</h3><p>Current postdoctoral research studies how modern processors can contain hidden vulnerabilities that leak confidential information. The direction connects microarchitectural behavior, hardware performance events, scheduling, memory systems, and security-observable side effects.</p></article>
-<article class="card purple"><h3>Hardware Trojan detection and Design for Hardware Trust</h3><p>Doctoral research focused on efficient methodologies based on Design for Hardware Trust to detect malicious modifications inserted by untrusted foundries or third-party supply-chain actors.</p></article>
-<article class="card cyan"><h3>Lightweight PUF-based authentication</h3><p>Research contributions include lightweight protocols and implementation-aware designs where physical uniqueness and low-cost hardware primitives support secure identification and authentication.</p></article>
-<article class="card"><h3>Security across abstraction layers</h3><p>The long-term vision is to reason about hardware security not only at one layer, but across the stack: physical effects, circuit structures, RTL/ASIC design, microarchitecture, firmware, operating systems, and application-observable behavior.</p></article>
-</div></div></section></main><footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <strong>Ahmad Shabani</strong>
-      <div class="muted">Hardware & Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
+<main>
+  <section class="page-hero research-combined-hero">
+    <div class="container">
+      <div class="eyebrow">Research & Publications</div>
+      <h1>Security from circuits to microarchitecture.</h1>
+      <p>A compact view of my research agenda and peer-reviewed publications in hardware security, trustworthy digital design, PUF-based authentication, and efficient VLSI systems.</p>
+      <div class="hero-actions">
+        <a class="btn gold" href="#publications">View publications</a>
+        <a class="btn" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Google Scholar ↗</a>
+        <a class="btn ghost" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+      <div class="research-mini-panel" aria-label="Research summary">
+        <div class="research-mini-stat"><strong>Hardware Security</strong><span>Hardware Trojans, Design for Hardware Trust, secure testing</span></div>
+        <div class="research-mini-stat"><strong>PUF / IoT</strong><span>Lightweight authentication for resource-constrained devices</span></div>
+        <div class="research-mini-stat"><strong>Microarchitecture</strong><span>Processor/GPU security, leakage, side channels, covert channels</span></div>
+      </div>
     </div>
-    <div>
-      <a href="mailto:ahmadsh@kth.se">ahmadsh@kth.se</a> ·
-      <a href="https://kth.se/profile/ahmadsh" target="_blank">KTH Profile</a> ·
-      <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank">Google Scholar</a>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Core themes</h3>
+          <div class="tags"><span class="tag">Hardware Trust</span><span class="tag">Trojan Detection</span><span class="tag">PUFs</span><span class="tag">GPU Security</span><span class="tag">Side Channels</span><span class="tag">ASIC Design</span></div>
+          <p class="merged-publication-note">The publication list below follows these themes and links to publisher pages, Google Scholar, and local PDF placeholders.</p>
+        </div>
+      </aside>
+      <div class="grid research-themes-compact">
+        <article class="card accent"><h3>Processor and GPU security</h3><p>Current postdoctoral research studies hidden vulnerabilities in modern processors and GPUs, including microarchitectural behavior, scheduling, memory systems, hardware performance events, and security-observable side effects.</p></article>
+        <article class="card purple"><h3>Hardware Trojan detection</h3><p>Doctoral research focused on efficient Design-for-Hardware-Trust methodologies for detecting malicious modifications introduced by untrusted foundries or third-party supply-chain actors.</p></article>
+        <article class="card cyan"><h3>PUF-based authentication</h3><p>Research contributions include lightweight protocols and implementation-aware designs where physical uniqueness and low-cost hardware primitives support secure identification and authentication.</p></article>
+        <article class="card"><h3>Security across abstraction layers</h3><p>The long-term vision connects physical effects, digital circuits, RTL/ASIC design, microarchitecture, firmware, operating systems, and application-observable security behavior.</p></article>
+      </div>
     </div>
-  </div>
-</footer>
-<script src="assets/js/main.js"></script></body></html>
+  </section>
+
+<section id="publications" class="section publications-section compact-publications-section">
+    <div class="container">
+      <div class="section-head pub-section-head compact-pub-section-head">
+        <div>
+          <div class="kicker">Publication list</div>
+          <h2>Publications</h2>
+          <p class="subtitle">A compact list of peer-reviewed papers. Use the filters to switch between research directions.</p>
+        </div>
+      </div>
+
+      <div class="pub-toolbar compact-pub-toolbar" aria-label="Publication filters">
+        <button class="pub-filter active" data-filter="all">All</button>
+        <button class="pub-filter" data-filter="hardware-security">Hardware security</button>
+        <button class="pub-filter" data-filter="puf">PUF / IoT</button>
+        <button class="pub-filter" data-filter="vlsi">VLSI / low-power</button>
+      </div>
+
+      <div class="publication-list compact-publication-list">
+        <article class="publication-card compact-publication-card" data-topic="puf">
+          <div class="publication-year">2023</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic puf">PUF / IoT</span></div>
+            <h3>DC-PUF: Machine learning-resistant PUF-based authentication protocol using dependency chain for resource-constraint IoT devices</h3>
+            <p class="publication-authors">Abolfazl Sajadi, <strong>Ahmad Shabani</strong>, Bijan Alizadeh</p>
+            <p class="publication-venue">Journal of Network and Computer Applications, 217, 103693</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1016/j.jnca.2023.103693" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/dc-puf-dependency-chain.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="puf">
+          <div class="publication-year">2022</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic puf">RF-PUF</span></div>
+            <h3>A comparative study of machine learning classifiers for secure RF-PUF-based authentication in internet of things</h3>
+            <p class="publication-authors">Amir Ashtari, <strong>Ahmad Shabani</strong>, Bijan Alizadeh</p>
+            <p class="publication-venue">Microprocessors and Microsystems, 93, 104600</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1016/j.micpro.2022.104600" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/rf-puf-ml-classifiers.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="hardware-security">
+          <div class="publication-year">2022</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic hardware">Hardware Trojan</span></div>
+            <h3>Hardware Patching Methodology for Neutralizing Timing Hardware Trojans Using Vulnerability Analysis and Time Borrowing Scheme</h3>
+            <p class="publication-authors">Fatemeh Khormizi, <strong>Ahmad Shabani</strong>, Bijan Alizadeh</p>
+            <p class="publication-venue">IEEE Transactions on Circuits and Systems II: Express Briefs, 69(6), 2937–2941</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://dblp.org/rec/journals/tcasII/KhormiziSA22" target="_blank" rel="noopener">Record ↗</a>
+              <a class="pub-btn" href="papers/hardware-patching-timing-trojans.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="hardware-security">
+          <div class="publication-year">2021</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic hardware">Detection / localization</span></div>
+            <h3>SAT-Based Integrated Hardware Trojan Detection and Localization Approach Through Path-Delay Analysis</h3>
+            <p class="publication-authors">Mohammad Sabri Abrebekoh, <strong>Ahmad Shabani</strong>, Bijan Alizadeh</p>
+            <p class="publication-venue">IEEE Transactions on Circuits and Systems II: Express Briefs, 68(8), 2850–2854</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1109/TCSII.2021.3074549" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/sat-based-trojan-detection-localization.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="hardware-security">
+          <div class="publication-year">2021</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic hardware">Test generation</span></div>
+            <h3>Enhancing Hardware Trojan Detection Sensitivity Using Partition-Based Shuffling Scheme</h3>
+            <p class="publication-authors"><strong>Ahmad Shabani</strong>, Bijan Alizadeh</p>
+            <p class="publication-venue">IEEE Transactions on Circuits and Systems II: Express Briefs, 68(1), 266–270</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1109/TCSII.2020.3001263" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/partition-based-shuffling-hardware-trojan.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="vlsi">
+          <div class="publication-year">2021</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic vlsi">HEVC / DCT</span></div>
+            <h3>Area and Power-Efficient Variable-Sized DCT Architecture for HEVC Using Muxed-MCM Problem</h3>
+            <p class="publication-authors"><strong>Ahmad Shabani</strong>, Mohammad Sabri Abrebekoh, Bahareh Khabbazan, Somayeh Timarchi</p>
+            <p class="publication-venue">IEEE Transactions on Circuits and Systems I: Regular Papers, 68(3), 1259–1268</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1109/TCSI.2020.3044248" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/variable-sized-dct-hevc-muxed-mcm.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="hardware-security">
+          <div class="publication-year">2020</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic hardware">Design for Trust</span></div>
+            <h3>PODEM: A low-cost property-based design modification for detecting Hardware Trojans in resource-constraint IoT devices</h3>
+            <p class="publication-authors"><strong>Ahmad Shabani</strong>, Bijan Alizadeh</p>
+            <p class="publication-venue">Journal of Network and Computer Applications, 167, 102713</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1016/j.jnca.2020.102713" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/podem-property-based-hardware-trojan.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="hardware-security">
+          <div class="publication-year">2020</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic hardware">MAX-SAT</span></div>
+            <h3>PMTP: A MAX-SAT-Based Approach to Detect Hardware Trojan Using Propagation of Maximum Transition Probability</h3>
+            <p class="publication-authors"><strong>Ahmad Shabani</strong>, Bijan Alizadeh</p>
+            <p class="publication-venue">IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 39(1), 25–33</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1109/TCAD.2018.2889663" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/pmtp-max-sat-hardware-trojan.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="puf">
+          <div class="publication-year">2019</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Conference</span><span class="pub-topic puf">RF-PUF</span></div>
+            <h3>A New RF-PUF Based Authentication of Internet of Things Using Random Forest Classification</h3>
+            <p class="publication-authors">Amir Ashtari, <strong>Ahmad Shabani</strong>, Bijan Alizadeh</p>
+            <p class="publication-venue">16th International ISC Conference on Information Security and Cryptology, 21–26</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://dblp.org/rec/conf/iscisc/AshtariSA19" target="_blank" rel="noopener">Record ↗</a>
+              <a class="pub-btn" href="papers/rf-puf-random-forest-iscisc.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="vlsi">
+          <div class="publication-year">2019</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic vlsi">DCT architecture</span></div>
+            <h3>Power and area efficient CORDIC-Based DCT using direct realization of decomposed matrix</h3>
+            <p class="publication-authors"><strong>Ahmad Shabani</strong>, Somayeh Timarchi, Hossein Mahdavi</p>
+            <p class="publication-venue">Microelectronics Journal, 91, 11–21</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1016/j.mejo.2019.07.008" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/cordic-dct-decomposed-matrix.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="vlsi">
+          <div class="publication-year">2017</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic vlsi">Low-power DCT</span></div>
+            <h3>Low-Power DCT-Based Compressor for Wireless Capsule Endoscopy</h3>
+            <p class="publication-authors"><strong>Ahmad Shabani</strong>, Somayeh Timarchi</p>
+            <p class="publication-venue">Signal Processing: Image Communication, 59, 83–95</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.1016/j.image.2017.03.003" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/low-power-dct-capsule-endoscopy.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="publication-card compact-publication-card" data-topic="vlsi">
+          <div class="publication-year">2015</div>
+          <div class="publication-body">
+            <div class="publication-topline"><span class="pub-type">Journal</span><span class="pub-topic vlsi">Low-power circuits</span></div>
+            <h3>Low Power Parallel Prefix Adder Design Using Two Phase Adiabatic Logic</h3>
+            <p class="publication-authors">Alireza Hassanzadeh, <strong>Ahmad Shabani</strong></p>
+            <p class="publication-venue">Journal of Electrical and Electronic Engineering, 3(6), 181–186</p>
+            <div class="publication-actions">
+              <a class="pub-btn primary" href="https://doi.org/10.11648/j.jeee.20150306.11" target="_blank" rel="noopener">Publisher ↗</a>
+              <a class="pub-btn" href="papers/low-power-parallel-prefix-adder-adiabatic.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="pub-btn ghost" href="https://scholar.google.com/citations?hl=en&user=iU2Rx7UAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <article class="pub-howto-card compact-pub-howto-card">
+        <div>
+          <div class="kicker">Local paper files</div>
+          <h3>Where to upload the source PDFs</h3>
+          <p>Put your paper PDFs inside the <code>papers/</code> folder using the filenames linked above. You can also edit each PDF link later inside <code>publications.html</code>.</p>
+        </div>
+        <a class="btn ghost" href="papers/" target="_blank" rel="noopener">Open papers folder</a>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="container"><p>© <span id="year"></span> Ahmad Shabani. Built with GitHub Pages.</p></div></footer>
+<script src="assets/js/main.js"></script>
+<script>
+const filterButtons = document.querySelectorAll('.pub-filter');
+  const publicationCards = document.querySelectorAll('.publication-card');
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      filterButtons.forEach((item) => item.classList.remove('active'));
+      button.classList.add('active');
+      publicationCards.forEach((card) => {
+        const show = filter === 'all' || card.dataset.topic === filter;
+        card.style.display = show ? 'grid' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
