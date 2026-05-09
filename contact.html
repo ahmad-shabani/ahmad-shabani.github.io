@@ -394,6 +394,124 @@
         white-space: normal;
       }
     }
+  
+    /* Page-specific theme support matching the shared Teaching topbar */
+    body.light-theme .contact-compact-hero,
+    body:not(.dark) .contact-compact-hero {
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255, 214, 111, 0.20), transparent 30%),
+        radial-gradient(circle at 84% 16%, rgba(112, 215, 255, 0.18), transparent 28%),
+        linear-gradient(135deg, #f8faff 0%, #eef3ff 55%, #ffffff 100%);
+      border-bottom-color: rgba(17,22,42,0.08);
+    }
+
+    body.light-theme .contact-compact-body,
+    body:not(.dark) .contact-compact-body {
+      background: #f6f8ff;
+    }
+
+    body.light-theme .contact-panel,
+    body:not(.dark) .contact-panel {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.72), transparent 36%),
+        #ffffff;
+      border-color: rgba(17,22,42,0.10);
+      box-shadow: 0 16px 38px rgba(31,43,77,0.10);
+    }
+
+    body.light-theme .contact-compact-hero h1,
+    body:not(.dark) .contact-compact-hero h1,
+    body.light-theme .contact-section-title,
+    body:not(.dark) .contact-section-title,
+    body.light-theme .research-interest-title-wrap h2,
+    body:not(.dark) .research-interest-title-wrap h2,
+    body.light-theme .address-line,
+    body:not(.dark) .address-line {
+      color: #11162a;
+    }
+
+    body.light-theme .contact-compact-hero p,
+    body:not(.dark) .contact-compact-hero p,
+    body.light-theme .address-muted,
+    body:not(.dark) .address-muted,
+    body.light-theme .research-interest-title-wrap p,
+    body:not(.dark) .research-interest-title-wrap p,
+    body.light-theme .contact-label,
+    body:not(.dark) .contact-label {
+      color: #5b6780;
+    }
+
+    body.light-theme .contact-item-compact,
+    body:not(.dark) .contact-item-compact,
+    body.light-theme .research-interest-item,
+    body:not(.dark) .research-interest-item {
+      background: #f7f9ff;
+      border-color: rgba(17,22,42,0.08);
+    }
+
+    body.light-theme .contact-value,
+    body:not(.dark) .contact-value,
+    body.light-theme .research-interest-text,
+    body:not(.dark) .research-interest-text {
+      color: #172238;
+    }
+
+    body.dark .contact-compact-hero {
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255, 231, 136, 0.13), transparent 30%),
+        radial-gradient(circle at 84% 16%, rgba(112, 215, 255, 0.13), transparent 28%),
+        linear-gradient(135deg, #171d34 0%, #251250 48%, #0b1024 100%);
+      border-bottom-color: rgba(255,255,255,0.08);
+    }
+
+    body.dark .contact-compact-body {
+      background: #080d1d;
+    }
+
+    body.dark .contact-panel {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.045), transparent 36%),
+        rgba(18, 26, 49, 0.86);
+      border-color: rgba(150, 170, 230, 0.20);
+      box-shadow: 0 16px 38px rgba(0,0,0,0.18);
+    }
+
+    body.dark .contact-compact-hero h1,
+    body.dark .contact-section-title,
+    body.dark .research-interest-title-wrap h2,
+    body.dark .address-line {
+      color: #ffffff;
+    }
+
+    body.dark .contact-compact-hero p,
+    body.dark .address-muted,
+    body.dark .research-interest-title-wrap p,
+    body.dark .contact-label {
+      color: #aebbd4;
+    }
+
+    body.dark .contact-item-compact,
+    body.dark .research-interest-item {
+      background: rgba(255,255,255,0.035);
+      border-color: rgba(255,255,255,0.08);
+    }
+
+    body.dark .contact-value,
+    body.dark .research-interest-text {
+      color: #eef4ff;
+    }
+
+    .research-interest-main-icon,
+    .research-interest-icon {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    .research-interest-main-icon {
+      font-size: 1.1rem;
+      font-weight: 900;
+    }
+
   </style>
 </head>
 <body>
@@ -505,16 +623,7 @@
             <section class="contact-panel research-interest-panel">
               <div class="contact-panel-inner">
                 <div class="research-interest-head">
-                  <span class="research-interest-main-icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M12 3v4"></path>
-                      <path d="M12 17v4"></path>
-                      <path d="M3 12h4"></path>
-                      <path d="M17 12h4"></path>
-                      <rect x="7" y="7" width="10" height="10" rx="2"></rect>
-                      <path d="M10 10h4v4h-4z"></path>
-                    </svg>
-                  </span>
+                  <span class="research-interest-main-icon" aria-hidden="true">▣</span>
                   <span class="research-interest-title-wrap">
                     <h2>Research interests</h2>
                     <p>Hardware security, trustworthy systems, and implementation-aware design.</p>
@@ -523,37 +632,27 @@
 
                 <div class="research-interest-grid">
                   <div class="research-interest-item">
-                    <span class="research-interest-icon gold">
-                      <svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4Z"></path><path d="M9 12l2 2 4-5"></path></svg>
-                    </span>
+                    <span class="research-interest-icon gold" aria-hidden="true">🛡</span>
                     <span class="research-interest-text">Hardware Trojans & Security</span>
                   </div>
 
                   <div class="research-interest-item">
-                    <span class="research-interest-icon green">
-                      <svg viewBox="0 0 24 24"><path d="M7 11V7a5 5 0 0 1 10 0v4"></path><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M12 15v2"></path></svg>
-                    </span>
+                    <span class="research-interest-icon green" aria-hidden="true">🔐</span>
                     <span class="research-interest-text">PUF-Based Authentication</span>
                   </div>
 
                   <div class="research-interest-item">
-                    <span class="research-interest-icon purple">
-                      <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 17h16"></path><path d="M7 4v16"></path><path d="M17 4v16"></path><rect x="9" y="9" width="6" height="6" rx="1"></rect></svg>
-                    </span>
+                    <span class="research-interest-icon purple" aria-hidden="true">▦</span>
                     <span class="research-interest-text">Design for Hardware Trust</span>
                   </div>
 
                   <div class="research-interest-item">
-                    <span class="research-interest-icon">
-                      <svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 10-13h-7l0-7Z"></path></svg>
-                    </span>
+                    <span class="research-interest-icon" aria-hidden="true">⚡</span>
                     <span class="research-interest-text">Low-Power VLSI Design</span>
                   </div>
 
                   <div class="research-interest-item">
-                    <span class="research-interest-icon gold">
-                      <svg viewBox="0 0 24 24"><path d="M4 12c3-6 13-6 16 0-3 6-13 6-16 0Z"></path><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3"></path><path d="M12 19v3"></path></svg>
-                    </span>
+                    <span class="research-interest-icon gold" aria-hidden="true">◉</span>
                     <span class="research-interest-text">Transient Microarchitectural Attacks</span>
                   </div>
                 </div>
@@ -595,5 +694,34 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+
+<script>
+  (function () {
+    const applyTheme = (mode) => {
+      const isDark = mode === 'dark';
+      document.documentElement.classList.toggle('dark', isDark);
+      document.documentElement.classList.toggle('light-theme', !isDark);
+      document.body.classList.toggle('dark', isDark);
+      document.body.classList.toggle('light-theme', !isDark);
+      localStorage.setItem('theme', mode);
+      localStorage.setItem('site-theme', mode);
+    };
+
+    const saved = localStorage.getItem('theme') || localStorage.getItem('site-theme');
+    if (saved === 'dark' || saved === 'light') {
+      applyTheme(saved);
+    }
+
+    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        const nowDark = document.body.classList.contains('dark') || document.documentElement.classList.contains('dark');
+        applyTheme(nowDark ? 'light' : 'dark');
+      }, true);
+    });
+  })();
+</script>
+
 </body>
 </html>

@@ -463,6 +463,105 @@
       margin-top: 0;
     }
 
+  
+    /* Page-specific theme support matching the shared Teaching topbar */
+    body.light-theme .projects-hero,
+    body:not(.dark) .projects-hero {
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255, 214, 111, 0.18), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(112, 215, 255, 0.16), transparent 26%),
+        linear-gradient(135deg, #f8faff 0%, #eef3ff 55%, #ffffff 100%);
+      border-bottom-color: rgba(17,22,42,0.08);
+    }
+
+    body.light-theme .projects-shell,
+    body:not(.dark) .projects-shell {
+      background: #f6f8ff;
+    }
+
+    body.light-theme .projects-hero h1,
+    body:not(.dark) .projects-hero h1,
+    body.light-theme .project-toolbar-title,
+    body:not(.dark) .project-toolbar-title,
+    body.light-theme .project-title,
+    body:not(.dark) .project-title {
+      color: #11162a;
+    }
+
+    body.light-theme .projects-hero p,
+    body:not(.dark) .projects-hero p,
+    body.light-theme .project-desc,
+    body:not(.dark) .project-desc,
+    body.light-theme .project-details p,
+    body:not(.dark) .project-details p {
+      color: #5b6780;
+    }
+
+    body.light-theme .project-toolbar,
+    body:not(.dark) .project-toolbar,
+    body.light-theme .project-row,
+    body:not(.dark) .project-row {
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.80), transparent 36%),
+        #ffffff;
+      border-color: rgba(17,22,42,0.10);
+      box-shadow: 0 12px 28px rgba(31,43,77,0.08);
+    }
+
+    body.light-theme .project-tag,
+    body:not(.dark) .project-tag {
+      background: #f7f9ff;
+      border-color: rgba(17,22,42,0.08);
+      color: #34445e;
+    }
+
+    body.light-theme .project-details-inner,
+    body:not(.dark) .project-details-inner {
+      background: rgba(238, 243, 255, 0.75);
+    }
+
+    body.dark .projects-hero {
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255, 231, 136, 0.16), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(112, 215, 255, 0.16), transparent 26%),
+        linear-gradient(135deg, #151a31 0%, #271554 48%, #0c1024 100%);
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    body.dark .projects-shell {
+      background: #080d1d;
+    }
+
+    body.dark .projects-hero h1,
+    body.dark .project-toolbar-title,
+    body.dark .project-title {
+      color: #eef4ff;
+    }
+
+    body.dark .projects-hero p,
+    body.dark .project-desc,
+    body.dark .project-details p {
+      color: #aebbd4;
+    }
+
+    body.dark .project-toolbar,
+    body.dark .project-row {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 36%),
+        rgba(18, 26, 49, 0.86);
+      border-color: rgba(150, 170, 230, 0.20);
+    }
+
+    body.dark .project-tag {
+      background: rgba(255, 255, 255, 0.045);
+      border-color: rgba(255,255,255,0.10);
+      color: #cfd9f0;
+    }
+
+    body.dark .project-details-inner {
+      background: rgba(4, 8, 20, 0.22);
+    }
+
   </style>
 </head>
 <body>
@@ -812,6 +911,35 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+
+<script>
+  (function () {
+    const applyTheme = (mode) => {
+      const isDark = mode === 'dark';
+      document.documentElement.classList.toggle('dark', isDark);
+      document.documentElement.classList.toggle('light-theme', !isDark);
+      document.body.classList.toggle('dark', isDark);
+      document.body.classList.toggle('light-theme', !isDark);
+      localStorage.setItem('theme', mode);
+      localStorage.setItem('site-theme', mode);
+    };
+
+    const saved = localStorage.getItem('theme') || localStorage.getItem('site-theme');
+    if (saved === 'dark' || saved === 'light') {
+      applyTheme(saved);
+    }
+
+    document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        const nowDark = document.body.classList.contains('dark') || document.documentElement.classList.contains('dark');
+        applyTheme(nowDark ? 'light' : 'dark');
+      }, true);
+    });
+  })();
+</script>
+
 <script>
   document.querySelectorAll('.project-row').forEach((row) => {
     row.addEventListener('click', (event) => {
