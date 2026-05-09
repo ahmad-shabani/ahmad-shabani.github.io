@@ -1,82 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact | Ahmad Shabani</title>
-  <meta name="description" content="Contact information for Ahmad Shabani." />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
-
-    body.light-theme .contact-compact-hero,
-    .light-theme body .contact-compact-hero {
-      background: linear-gradient(135deg, #f8faff 0%, #eef3ff 55%, #ffffff 100%);
-      border-bottom-color: rgba(17,22,42,0.08);
-    }
-    body.light-theme .contact-compact-hero h1,
-    .light-theme body .contact-compact-hero h1,
-    body.light-theme .contact-section-title,
-    .light-theme body .contact-section-title,
-    body.light-theme .research-interest-title-wrap h2,
-    .light-theme body .research-interest-title-wrap h2,
-    body.light-theme .address-line,
-    .light-theme body .address-line {
-      color: #11162a;
-    }
-    body.light-theme .contact-compact-hero p,
-    .light-theme body .contact-compact-hero p,
-    body.light-theme .address-muted,
-    .light-theme body .address-muted,
-    body.light-theme .research-interest-title-wrap p,
-    .light-theme body .research-interest-title-wrap p,
-    body.light-theme .contact-label,
-    .light-theme body .contact-label {
-      color: #5b6780;
-    }
-    body.light-theme .contact-compact-body,
-    .light-theme body .contact-compact-body {
-      background: #f6f8ff;
-    }
-    body.light-theme .contact-panel,
-    .light-theme body .contact-panel {
-      background: #ffffff;
-      border-color: rgba(17,22,42,0.10);
-      box-shadow: 0 16px 38px rgba(31,43,77,0.10);
-    }
-    body.light-theme .contact-item-compact,
-    .light-theme body .contact-item-compact,
-    body.light-theme .research-interest-item,
-    .light-theme body .research-interest-item {
-      background: #f7f9ff;
-      border-color: rgba(17,22,42,0.08);
-    }
-    body.light-theme .contact-value,
-    .light-theme body .contact-value,
-    body.light-theme .research-interest-text,
-    .light-theme body .research-interest-text {
-      color: #172238;
-    }
-
-    .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      color: #ffe788;
-      cursor: pointer;
-      font-weight: 900;
-    }
-
-    .theme-toggle:hover {
-      background: rgba(255,231,136,0.12);
-      border-color: rgba(255,231,136,0.40);
-    }
-
-    /* ===== Compact Contact page ===== */
+/* ===== Compact Contact page ===== */
     .contact-compact-hero {
       padding: 58px 0 26px;
       background:
@@ -464,30 +394,29 @@
         white-space: normal;
       }
     }
-  
   </style>
 </head>
-
 <body>
-  <header class="site-header">
-    <nav class="navbar">
-      <a class="brand" href="index.html">Ahmad Shabani</a>
-      <button class="nav-toggle" aria-label="Open navigation">☰</button>
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="awards.html">Awards</a></li>
-        <li><a class="active" href="contact.html">Contact</a></li>
-      </ul>
-      <button class="theme-toggle" aria-label="Toggle theme">◐</button>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="logo">AS</span><span>Ahmad Shabani</span></a>
+    <button class="mobile-menu" data-nav-toggle>Menu</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="education.html">Education</a>
+      <a href="experience.html">Experience</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="projects.html">Projects</a>
+      <a href="awards.html">Awards</a>
+      <a class="active" href="contact.html">Contact</a>
+      <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank">CV</a>
+      <button type="button" data-theme-toggle>◐</button>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main>
+<main>
     <section class="contact-compact-hero">
       <div class="container">
         <span class="contact-compact-kicker">Get in touch</span>
@@ -652,29 +581,19 @@
     </section>
   </main>
 
-  <script src="assets/js/main.js"></script>
-
-
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const body = document.body;
-      const saved = localStorage.getItem('theme') || localStorage.getItem('site-theme');
-      if (saved === 'light') {
-        root.classList.add('light-theme');
-        body.classList.add('light-theme');
-      }
-      const btn = document.querySelector('.theme-toggle');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          root.classList.toggle('light-theme');
-          body.classList.toggle('light-theme');
-          const isLight = root.classList.contains('light-theme') || body.classList.contains('light-theme');
-          localStorage.setItem('theme', isLight ? 'light' : 'dark');
-          localStorage.setItem('site-theme', isLight ? 'light' : 'dark');
-        });
-      }
-    })();
-  </script>
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Ahmad Shabani</strong>
+      <div class="muted">Hardware & Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
+    </div>
+    <div>
+      <a href="mailto:ahmadsh@kth.se">ahmadsh@kth.se</a> ·
+      <a href="https://kth.se/profile/ahmadsh" target="_blank">KTH Profile</a> ·
+      <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank">Google Scholar</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
