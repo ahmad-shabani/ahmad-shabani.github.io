@@ -1103,3 +1103,21 @@ body.dark .topbar {
 body:not(.dark) .topbar {
   background: rgba(255, 255, 255, 0.88);
 }
+
+
+/* Strong sticky topbar above every page section */
+.topbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 99999 !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+}
+
+body.dark .topbar {
+  background: rgba(8, 13, 29, 0.92) !important;
+}
+
+body:not(.dark) .topbar {
+  background: rgba(255, 255, 255, 0.90) !important;
+}
