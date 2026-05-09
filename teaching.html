@@ -56,6 +56,73 @@
     @media (max-width: 520px) {
       .class-photo-fixed-frame { height: 155px !important; }
     }
+  
+    /* Course links: title itself is clickable, with clean external-link icon */
+    .course-copy {
+      min-width: 0 !important;
+      width: 100% !important;
+    }
+
+    .course-title-link {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 10px !important;
+      width: 100% !important;
+      min-height: 30px !important;
+      padding: 6px 8px !important;
+      border-radius: 12px !important;
+      color: inherit !important;
+      text-decoration: none !important;
+      transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease, border-color 0.16s ease !important;
+      border: 1px solid transparent !important;
+    }
+
+    .course-title-link:hover {
+      background: rgba(255, 231, 136, 0.12) !important;
+      border-color: rgba(255, 231, 136, 0.32) !important;
+      color: var(--gold, #f5c542) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    body:not(.dark) .course-title-link:hover {
+      background: rgba(21, 101, 192, 0.07) !important;
+      border-color: rgba(21, 101, 192, 0.18) !important;
+      color: #135f9f !important;
+    }
+
+    .course-title-text {
+      min-width: 0 !important;
+      line-height: 1.25 !important;
+    }
+
+    .course-link-icon {
+      flex: 0 0 auto !important;
+      width: 24px !important;
+      height: 24px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 9px !important;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f) !important;
+      color: #111827 !important;
+      box-shadow: 0 8px 18px rgba(255, 214, 111, 0.16) !important;
+    }
+
+    .course-link-icon svg {
+      width: 15px !important;
+      height: 15px !important;
+      fill: none !important;
+      stroke: currentColor !important;
+      stroke-width: 2.4 !important;
+      stroke-linecap: round !important;
+      stroke-linejoin: round !important;
+    }
+
+    .course-item:hover .course-link-icon {
+      filter: brightness(1.05) !important;
+    }
+
   </style>
 </head>
 <body>
@@ -106,11 +173,9 @@
         </p>
         <div class="teaching-focus">
           <span>Computer Architecture</span>
-                <a class="course-cta course-cta-small" href="references/computer-architecture-syllabus.pdf" target="_blank" rel="noopener" title="Open Computer Architecture syllabus" aria-label="Open Computer Architecture syllabus"><span aria-hidden="true">↗</span></a>
           <span>Logic Design</span>
           <span>Embedded Systems</span>
           <span>Cyber-Physical Systems</span>
-                <a class="course-cta course-cta-small" href="references/cyber-physical-systems-syllabus.pdf" target="_blank" rel="noopener" title="Open Cyber-Physical Systems syllabus" aria-label="Open Cyber-Physical Systems syllabus"><span aria-hidden="true">↗</span></a>
           <span>Digital Forensics</span>
           <span>VHDL & Digital Design</span>
         </div>
@@ -131,12 +196,62 @@
             <div class="info-chip"><span class="info-icon">👤</span><span>Faculty Member</span></div>
           </div>
           <div class="course-grid">
-            <div class="course-item"><span class="course-icon">▣</span><span>Computer Architecture</span></div>
-            <div class="course-item"><span class="course-icon">▣</span><span>Introduction of Logic Design</span>
-                <a class="course-cta course-cta-small" href="references/introduction-of-logic-design-syllabus.pdf" target="_blank" rel="noopener" title="Open Introduction of Logic Design syllabus" aria-label="Open Introduction of Logic Design syllabus"><span aria-hidden="true">↗</span></a></div>
-            <div class="course-item"><span class="course-icon">▣</span><span>Cyber-Physical Systems</span></div>
-            <div class="course-item"><span class="course-icon">▣</span><span>Digital System Design Automation Using VHDL</span>
-                <a class="course-cta course-cta-small" href="references/digital-system-design-automation-vhdl-syllabus.pdf" target="_blank" rel="noopener" title="Open Digital System Design Automation Using VHDL syllabus" aria-label="Open Digital System Design Automation Using VHDL syllabus"><span aria-hidden="true">↗</span></a></div>
+            <div class="course-item course-with-link">
+              <span class="course-icon">▣</span>
+              <div class="course-copy">
+                <a class="course-title-link" href="references/computer-architecture-syllabus.pdf" target="_blank" rel="noopener" title="Open course material for Computer Architecture">
+                  <span class="course-title-text">Computer Architecture</span>
+                  <span class="course-link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 17L17 7"></path>
+                      <path d="M9 7h8v8"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="course-item course-with-link">
+              <span class="course-icon">▣</span>
+              <div class="course-copy">
+                <a class="course-title-link" href="references/introduction-of-logic-design-syllabus.pdf" target="_blank" rel="noopener" title="Open course material for Introduction of Logic Design">
+                  <span class="course-title-text">Introduction of Logic Design</span>
+                  <span class="course-link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 17L17 7"></path>
+                      <path d="M9 7h8v8"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="course-item course-with-link">
+              <span class="course-icon">▣</span>
+              <div class="course-copy">
+                <a class="course-title-link" href="references/cyber-physical-systems-syllabus.pdf" target="_blank" rel="noopener" title="Open course material for Cyber-Physical Systems">
+                  <span class="course-title-text">Cyber-Physical Systems</span>
+                  <span class="course-link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 17L17 7"></path>
+                      <path d="M9 7h8v8"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="course-item course-with-link">
+              <span class="course-icon">▣</span>
+              <div class="course-copy">
+                <a class="course-title-link" href="references/digital-system-design-automation-vhdl-syllabus.pdf" target="_blank" rel="noopener" title="Open course material for Digital System Design Automation Using VHDL">
+                  <span class="course-title-text">Digital System Design Automation Using VHDL</span>
+                  <span class="course-link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 17L17 7"></path>
+                      <path d="M9 7h8v8"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
         </article>
 
@@ -157,9 +272,14 @@
             <div class="course-item kth-course-item">
               <span class="course-icon">▣</span>
               <div class="course-copy">
-                <span>Digital Forensics and Incident Response <strong>(EP2780)</strong></span>
-                <a class="course-cta" href="https://www.kth.se/student/kurser/kurs/EP2780" target="_blank" rel="noopener" aria-label="Open official KTH course page for EP2780">
-                  Official KTH course page <span aria-hidden="true">↗</span>
+                <a class="course-title-link" href="https://www.kth.se/student/kurser/kurs/EP2780" target="_blank" rel="noopener" title="Open course material for Digital Forensics and Incident Response EP2780">
+                  <span class="course-title-text">Digital Forensics and Incident Response <strong>(EP2780)</strong></span>
+                  <span class="course-link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 17L17 7"></path>
+                      <path d="M9 7h8v8"></path>
+                    </svg>
+                  </span>
                 </a>
               </div>
             </div>
@@ -180,8 +300,20 @@
             <div class="info-chip"><span class="info-icon">👤</span><span>Adjunct Instructor</span></div>
           </div>
           <div class="course-grid single">
-            <div class="course-item"><span class="course-icon">▣</span><span>Core-Based Embedded System Design</span>
-                <a class="course-cta course-cta-small" href="references/core-based-embedded-system-design-syllabus.pdf" target="_blank" rel="noopener" title="Open Core-Based Embedded System Design syllabus" aria-label="Open Core-Based Embedded System Design syllabus"><span aria-hidden="true">↗</span></a></div>
+            <div class="course-item course-with-link">
+              <span class="course-icon">▣</span>
+              <div class="course-copy">
+                <a class="course-title-link" href="references/core-based-embedded-system-design-syllabus.pdf" target="_blank" rel="noopener" title="Open course material for Core-Based Embedded System Design">
+                  <span class="course-title-text">Core-Based Embedded System Design</span>
+                  <span class="course-link-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false">
+                      <path d="M7 17L17 7"></path>
+                      <path d="M9 7h8v8"></path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
           </div>
         </article>
       </div>
