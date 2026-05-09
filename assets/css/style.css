@@ -586,3 +586,122 @@ body.dark .contact-mini-label { color: #ffe7a6; }
   .contact-link-card { align-items: flex-start; }
   .research-interest-grid { grid-template-columns: 1fr; }
 }
+
+/* Teaching page fix: real university emblems + clearer course links */
+.teaching-card-head {
+  align-items: flex-start;
+  gap: 24px;
+}
+.institution-mark.emblem-wrap {
+  width: 118px;
+  height: 118px;
+  flex: 0 0 118px;
+  padding: 10px;
+  border-radius: 28px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: rgba(255,255,255,.94) !important;
+  border: 1px solid rgba(255,255,255,.35);
+  box-shadow: 0 20px 44px rgba(0,0,0,.18);
+  color: transparent;
+}
+.institution-mark.emblem-wrap::before,
+.institution-mark.emblem-wrap::after {
+  content: none !important;
+  display: none !important;
+}
+.institution-mark.emblem-wrap .institution-emblem,
+.institution-emblem {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+.kth-emblem-wrap {
+  background: #1f5aa6 !important;
+  border-color: rgba(80, 135, 218, .55) !important;
+}
+body.dark .institution-mark.emblem-wrap {
+  background: rgba(255,255,255,.95) !important;
+}
+body.dark .kth-emblem-wrap {
+  background: #1f5aa6 !important;
+}
+.course-copy {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+.course-with-link {
+  align-items: flex-start;
+}
+.course-with-link .course-copy > span {
+  display: block;
+}
+.course-cta {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 11px 15px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold), #fff1b8);
+  color: #1b1631 !important;
+  border: 1px solid rgba(244,201,93,.55);
+  box-shadow: 0 12px 24px rgba(244,201,93,.16);
+  font-size: 13px;
+  font-weight: 950;
+  line-height: 1.1;
+  text-decoration: none !important;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.course-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(244,201,93,.28);
+  filter: brightness(1.02);
+}
+.course-cta-small {
+  padding: 9px 12px;
+  font-size: 12px;
+}
+body.dark .course-cta {
+  background: linear-gradient(135deg, #ffe48a, #fff4c7);
+  color: #151222 !important;
+  border-color: rgba(255,228,138,.62);
+}
+@media (max-width: 760px) {
+  .institution-mark.emblem-wrap {
+    width: 86px;
+    height: 86px;
+    flex-basis: 86px;
+    border-radius: 22px;
+    padding: 8px;
+  }
+  .teaching-card-head {
+    gap: 16px;
+  }
+  .course-cta {
+    width: 100%;
+  }
+}
+@media (max-width: 520px) {
+  .institution-mark.emblem-wrap {
+    width: 74px;
+    height: 74px;
+    flex-basis: 74px;
+  }
+  .course-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
