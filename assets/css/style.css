@@ -1085,3 +1085,110 @@ body.dark .research-mini-stat { background: rgba(20, 18, 36, .72); }
   .research-themes-grid { grid-template-columns: 1fr; }
   .research-themes-grid .card { min-height: auto; }
 }
+
+/* Teaching page v11: compact course cards and syllabus icon links */
+.teaching-experience-section .teaching-list {
+  gap: 14px;
+}
+.teaching-experience-section .teaching-card {
+  padding: 22px 24px 22px 26px;
+  border-radius: 26px;
+}
+.teaching-experience-section .teaching-card-head {
+  margin-bottom: 8px;
+  align-items: center;
+  gap: 18px;
+}
+.teaching-experience-section .teaching-card h2 {
+  margin: 5px 0 0;
+  font-size: clamp(25px, 2.6vw, 39px);
+  line-height: 1.04;
+}
+.teaching-experience-section .role-badge {
+  padding: 6px 10px;
+  font-size: 11px;
+}
+.teaching-experience-section .info-grid {
+  gap: 8px;
+  margin: 9px 0 12px;
+}
+.teaching-experience-section .info-chip {
+  padding: 7px 11px;
+  border-radius: 14px;
+  font-size: 13px;
+  gap: 7px;
+}
+.teaching-experience-section .info-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.teaching-experience-section .course-grid {
+  gap: 8px;
+}
+.teaching-experience-section .course-item {
+  min-height: auto;
+  padding: 11px 12px;
+  border-radius: 16px;
+  align-items: center;
+  gap: 9px;
+}
+.teaching-experience-section .course-icon {
+  line-height: 1;
+  font-size: 12px;
+  margin-top: 1px;
+}
+.teaching-experience-section .course-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+.teaching-experience-section .course-copy > span {
+  font-size: 17px;
+  line-height: 1.22;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+.teaching-experience-section .course-cta,
+.teaching-experience-section .course-cta-small {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  box-shadow: 0 10px 22px rgba(244,201,93,.13) !important;
+}
+.teaching-experience-section .course-cta span,
+.teaching-experience-section .course-cta-small span {
+  font-size: 17px !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+}
+.teaching-experience-section .course-cta:hover,
+.teaching-experience-section .course-cta-small:hover {
+  transform: translateY(-1px) scale(1.03);
+}
+.teaching-experience-section .institution-mark.emblem-wrap {
+  width: 104px;
+  height: 104px;
+  flex-basis: 104px;
+  border-radius: 26px;
+}
+@media (max-width: 1100px) {
+  .teaching-experience-section .course-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .teaching-experience-section .teaching-card { padding: 20px 16px 20px 21px; }
+  .teaching-experience-section .teaching-card-head { align-items: flex-start; }
+  .teaching-experience-section .course-copy > span { font-size: 16px; }
+  .teaching-experience-section .course-cta,
+  .teaching-experience-section .course-cta-small { width: 32px !important; height: 32px !important; min-width: 32px !important; }
+  .teaching-experience-section .institution-mark.emblem-wrap { width: 82px; height: 82px; flex-basis: 82px; }
+}
