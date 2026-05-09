@@ -123,6 +123,16 @@
       filter: brightness(1.05) !important;
     }
 
+  
+    /* Safety: keep menu visible while scrolling */
+    .topbar {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 9999 !important;
+      backdrop-filter: blur(18px) !important;
+      -webkit-backdrop-filter: blur(18px) !important;
+    }
+
   </style>
 </head>
 <body>
@@ -132,9 +142,9 @@
     <button class="mobile-menu" data-nav-toggle>Menu</button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="publications.html">Publications</a>
       <a href="career.html">Career</a>
       <a class="active" href="teaching.html">Teaching</a>
+      <a href="publications.html">Publications</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
       <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank">CV</a>
@@ -147,6 +157,7 @@
   <section class="page-hero teaching-hero">
     <div class="container">
       <h1>Teaching Experiences</h1>
+      <p>University-level teaching across computer architecture, logic design, embedded systems, cyber-physical systems, digital design automation, and digital forensics.</p>
     </div>
   </section>
 

@@ -512,6 +512,16 @@
       font-weight: 900;
     }
 
+  
+    /* Safety: keep menu visible while scrolling */
+    .topbar {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 9999 !important;
+      backdrop-filter: blur(18px) !important;
+      -webkit-backdrop-filter: blur(18px) !important;
+    }
+
   </style>
 </head>
 <body>
@@ -521,9 +531,9 @@
     <button class="mobile-menu" data-nav-toggle>Menu</button>
     <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="publications.html">Publications</a>
       <a href="career.html">Career</a>
       <a href="teaching.html">Teaching</a>
+      <a href="publications.html">Publications</a>
       <a href="projects.html">Projects</a>
       <a class="active" href="contact.html">Contact</a>
       <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank">CV</a>
@@ -617,7 +627,46 @@
                 </div>
               </div>
             </section>
-</aside>
+
+            <section class="contact-panel research-interest-panel">
+              <div class="contact-panel-inner">
+                <div class="research-interest-head">
+                  <span class="research-interest-main-icon" aria-hidden="true">▣</span>
+                  <span class="research-interest-title-wrap">
+                    <h2>Research interests</h2>
+                    <p>Hardware security, trustworthy systems, and implementation-aware design.</p>
+                  </span>
+                </div>
+
+                <div class="research-interest-grid">
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon gold" aria-hidden="true">🛡</span>
+                    <span class="research-interest-text">Hardware Trojans & Security</span>
+                  </div>
+
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon green" aria-hidden="true">🔐</span>
+                    <span class="research-interest-text">PUF-Based Authentication</span>
+                  </div>
+
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon purple" aria-hidden="true">▦</span>
+                    <span class="research-interest-text">Design for Hardware Trust</span>
+                  </div>
+
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon" aria-hidden="true">⚡</span>
+                    <span class="research-interest-text">Low-Power VLSI Design</span>
+                  </div>
+
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon gold" aria-hidden="true">◉</span>
+                    <span class="research-interest-text">Transient Microarchitectural Attacks</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </aside>
 
           <section class="contact-panel">
             <div class="address-card-compact">
