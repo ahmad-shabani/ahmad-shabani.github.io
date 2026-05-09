@@ -6,124 +6,56 @@
   <title>Projects | Ahmad Shabani</title>
   <meta name="description" content="Selected industrial and research projects by Ahmad Shabani." />
   <link rel="stylesheet" href="assets/css/style.css" />
-
   <style>
 
-    /* Header/navigation consistency fix for Projects page */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      background: rgba(8, 13, 29, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    body.light-theme .projects-hero,
+    .light-theme body .projects-hero {
+      background: linear-gradient(135deg, #f8faff 0%, #eef3ff 55%, #ffffff 100%);
+      border-bottom-color: rgba(17,22,42,0.08);
+    }
+    body.light-theme .projects-hero h1,
+    .light-theme body .projects-hero h1,
+    body.light-theme .project-title,
+    .light-theme body .project-title,
+    body.light-theme .project-toolbar-title,
+    .light-theme body .project-toolbar-title {
+      color: #11162a;
+    }
+    body.light-theme .projects-hero p,
+    .light-theme body .projects-hero p,
+    body.light-theme .project-desc,
+    .light-theme body .project-desc {
+      color: #5b6780;
+    }
+    body.light-theme .projects-shell,
+    .light-theme body .projects-shell {
+      background: #f6f8ff;
+    }
+    body.light-theme .project-row,
+    .light-theme body .project-row,
+    body.light-theme .project-toolbar,
+    .light-theme body .project-toolbar {
+      background: #ffffff;
+      border-color: rgba(17,22,42,0.10);
     }
 
-    .navbar {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 12px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      color: #ffffff;
-      font-weight: 900;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .nav-menu {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 6px;
-    }
-
-    .nav-menu li {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .nav-menu a {
+    .theme-toggle {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 11px;
-      border-radius: 999px;
-      color: #dce6f8;
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 750;
-      line-height: 1;
-      transition: 0.16s ease;
-    }
-
-    .nav-menu a:hover,
-    .nav-menu a.active {
-      color: #11162a;
-      background: linear-gradient(135deg, #fff1a8, #ffd66f);
-    }
-
-    .nav-toggle {
-      display: none;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.06);
-      color: #ffffff;
-      border-radius: 10px;
       width: 38px;
-      height: 34px;
-      font-size: 1.15rem;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #ffe788;
       cursor: pointer;
+      font-weight: 900;
     }
 
-    @media (max-width: 820px) {
-      .navbar {
-        align-items: flex-start;
-      }
-
-      .nav-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .nav-menu {
-        position: absolute;
-        left: 22px;
-        right: 22px;
-        top: 58px;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
-        padding: 10px;
-        border-radius: 18px;
-        background: rgba(12, 18, 38, 0.98);
-        border: 1px solid rgba(255, 255, 255, 0.10);
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
-      }
-
-      .nav-menu.open,
-      .nav-menu.active,
-      .navbar.open .nav-menu {
-        display: flex;
-      }
-
-      .nav-menu a {
-        justify-content: flex-start;
-        padding: 10px 12px;
-      }
+    .theme-toggle:hover {
+      background: rgba(255,231,136,0.12);
+      border-color: rgba(255,231,136,0.40);
     }
 
     :root {
@@ -243,6 +175,7 @@
 
     .project-row {
       position: relative;
+      cursor: pointer;
       cursor: pointer;
       border: 1px solid var(--projects-border);
       border-radius: 16px;
@@ -504,11 +437,23 @@
       }
 
       .project-company {
-        width: 220px;
-        max-width: 220px;
-        text-align: center;
-        white-space: nowrap;
-      }
+      max-width: 174px;
+      width: 174px;
+      padding: 5px 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(126, 224, 178, 0.42);
+      background: rgba(126, 224, 178, 0.14);
+      color: #c9ffe4;
+      font-size: 0.56rem;
+      font-weight: 850;
+      line-height: 1.2;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
     }
 
     @media (max-width: 640px) {
@@ -545,11 +490,26 @@
       }
 
       .project-company {
-        width: min(220px, 100%);
-        max-width: min(220px, 100%);
-      }
+      max-width: 174px;
+      width: 174px;
+      padding: 5px 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(126, 224, 178, 0.42);
+      background: rgba(126, 224, 178, 0.14);
+      color: #c9ffe4;
+      font-size: 0.56rem;
+      font-weight: 850;
+      line-height: 1.2;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
 
     }
+  
   </style>
 </head>
 
@@ -568,6 +528,7 @@
         <li><a href="awards.html">Awards</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button class="theme-toggle" aria-label="Toggle theme">◐</button>
     </nav>
   </header>
 
@@ -884,17 +845,9 @@
     </section>
   </main>
 
+
   <script src="assets/js/main.js"></script>
   <script>
-
-    const projectsNavToggle = document.querySelector('.nav-toggle');
-    const projectsNavMenu = document.querySelector('.nav-menu');
-    if (projectsNavToggle && projectsNavMenu) {
-      projectsNavToggle.addEventListener('click', () => {
-        projectsNavMenu.classList.toggle('open');
-      });
-    }
-
     document.querySelectorAll('.project-row').forEach((row) => {
       row.addEventListener('click', (event) => {
         if (event.target.closest('a') || event.target.closest('button')) return;
@@ -922,6 +875,29 @@
         });
       });
     });
+  </script>
+
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const body = document.body;
+      const saved = localStorage.getItem('theme') || localStorage.getItem('site-theme');
+      if (saved === 'light') {
+        root.classList.add('light-theme');
+        body.classList.add('light-theme');
+      }
+      const btn = document.querySelector('.theme-toggle');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          root.classList.toggle('light-theme');
+          body.classList.toggle('light-theme');
+          const isLight = root.classList.contains('light-theme') || body.classList.contains('light-theme');
+          localStorage.setItem('theme', isLight ? 'light' : 'dark');
+          localStorage.setItem('site-theme', isLight ? 'light' : 'dark');
+        });
+      }
+    })();
   </script>
 </body>
 </html>
