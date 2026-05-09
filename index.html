@@ -17,172 +17,6 @@
       -webkit-backdrop-filter: blur(18px) !important;
     }
 
-  
-    /* Home Research Interests */
-    .home-research-section {
-      padding: 34px 0;
-      scroll-margin-top: 90px;
-    }
-
-    .home-research-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 28px;
-      padding: 22px;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(255, 231, 136, 0.20), transparent 34%),
-        radial-gradient(circle at 92% 0%, rgba(112, 215, 255, 0.16), transparent 34%),
-        var(--card, #ffffff);
-      border: 1px solid var(--border, rgba(30,41,59,0.12));
-      box-shadow: 0 18px 44px rgba(15, 23, 42, 0.10);
-    }
-
-    body.dark .home-research-card {
-      background:
-        radial-gradient(circle at 10% 0%, rgba(255, 231, 136, 0.13), transparent 34%),
-        radial-gradient(circle at 92% 0%, rgba(112, 215, 255, 0.11), transparent 34%),
-        rgba(17, 24, 39, 0.92);
-      border-color: rgba(255,255,255,0.10);
-    }
-
-    .home-research-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .home-research-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      color: #111827;
-      background: linear-gradient(135deg, #fff1a8, #ffd66f);
-      font-size: 0.72rem;
-      font-weight: 950;
-      text-transform: uppercase;
-      letter-spacing: 0.075em;
-    }
-
-    .home-research-head h2 {
-      margin: 8px 0 0;
-      color: var(--text, #111827);
-      font-size: clamp(1.45rem, 2.4vw, 2.2rem);
-      letter-spacing: -0.045em;
-      line-height: 1.05;
-    }
-
-    body.dark .home-research-head h2 {
-      color: #eef4ff;
-    }
-
-    .home-research-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .home-research-item {
-      position: relative;
-      padding: 14px;
-      min-height: 128px;
-      border-radius: 22px;
-      border: 1px solid rgba(125, 215, 255, 0.18);
-      background:
-        linear-gradient(135deg, rgba(125, 215, 255, 0.10), transparent 58%),
-        rgba(255,255,255,0.58);
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .home-research-item:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255, 231, 136, 0.36);
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.10);
-    }
-
-    body.dark .home-research-item {
-      background:
-        linear-gradient(135deg, rgba(125, 215, 255, 0.08), transparent 58%),
-        rgba(255,255,255,0.035);
-      border-color: rgba(255,255,255,0.10);
-    }
-
-    .home-research-icon {
-      width: 40px;
-      height: 40px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 15px;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, #fff1a8, #ffd66f);
-      color: #111827;
-      font-size: 0.78rem;
-      font-weight: 950;
-      letter-spacing: -0.04em;
-    }
-
-    .home-research-item:nth-child(2) .home-research-icon {
-      background: linear-gradient(135deg, #b2ffd8, #6de2ac);
-    }
-
-    .home-research-item:nth-child(3) .home-research-icon {
-      background: linear-gradient(135deg, #d9c8ff, #9a6cff);
-    }
-
-    .home-research-item:nth-child(4) .home-research-icon {
-      background: linear-gradient(135deg, #bdefff, #70d7ff);
-    }
-
-    .home-research-item:nth-child(5) .home-research-icon {
-      background: linear-gradient(135deg, #fff1a8, #ffb86b);
-    }
-
-    .home-research-item h3 {
-      margin: 0;
-      color: var(--text, #111827);
-      font-size: 0.88rem;
-      line-height: 1.28;
-      font-weight: 950;
-      letter-spacing: -0.015em;
-    }
-
-    body.dark .home-research-item h3 {
-      color: #eef4ff;
-    }
-
-    @media (max-width: 980px) {
-      .home-research-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 560px) {
-      .home-research-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-  
-/* Strong sticky topbar above every page section */
-.topbar {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 99999 !important;
-  backdrop-filter: blur(18px) !important;
-  -webkit-backdrop-filter: blur(18px) !important;
-}
-
-body.dark .topbar {
-  background: rgba(8, 13, 29, 0.92) !important;
-}
-
-body:not(.dark) .topbar {
-  background: rgba(255, 255, 255, 0.90) !important;
-}
-
   </style>
 </head>
 <body>
@@ -203,43 +37,59 @@ body:not(.dark) .topbar {
   </div>
 </header>
 <main>
-
-  <section class="section home-research-section" id="research-interests">
-    <div class="container">
-      <div class="home-research-card">
-        <div class="home-research-head">
-          <div>
-            <span class="home-research-kicker">Research Interests</span>
-            <h2>Security-aware hardware and computer systems</h2>
-          </div>
-        </div>
-
-        <div class="home-research-grid">
-          <article class="home-research-item">
-            <span class="home-research-icon">HT</span>
-            <h3>Hardware Trojans & Security</h3>
-          </article>
-          <article class="home-research-item">
-            <span class="home-research-icon">PUF</span>
-            <h3>PUF-Based Authentication</h3>
-          </article>
-          <article class="home-research-item">
-            <span class="home-research-icon">DfT</span>
-            <h3>Design for Hardware Trust</h3>
-          </article>
-          <article class="home-research-item">
-            <span class="home-research-icon">LP</span>
-            <h3>Low-Power VLSI Design</h3>
-          </article>
-          <article class="home-research-item">
-            <span class="home-research-icon">µA</span>
-            <h3>Transient Microarchitectural Attacks</h3>
-          </article>
-        </div>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Hardware Security · Computer Security · Digital ASIC Design</div>
+      <h1>Ahmad <span>Shabani</span></h1>
+      <p class="lead">Postdoctoral researcher at KTH Royal Institute of Technology working across hardware security, microarchitectural leakage, GPU security, Hardware Trojan detection, and trustworthy digital systems.</p>
+      <div class="hero-actions">
+        <a class="btn gold" href="research.html">Explore Research</a>
+        <a class="btn" href="files/Ahmad_Shabani_CV.pdf" target="_blank">Download CV</a>
+        <a class="btn ghost" href="contact.html">Contact</a>
       </div>
     </div>
-  </section>
+    <aside class="profile-card">
+      <img class="profile-photo" src="assets/img/ahmad-profile.png" alt="Portrait of Ahmad Shabani">
+      <div class="hero-stats">
+        <div class="stat"><strong>ASIC</strong><span>Design</span></div>
+        <div class="stat"><strong>GPU</strong><span>Security</span></div>
+        <div class="stat"><strong>PUF</strong><span>Auth.</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+<section class="section compact">
+  <div class="container grid three">
+    <article class="card accent"><div class="icon">▣</div><h3>Research identity</h3><p>Security across abstraction layers: from microarchitecture and processor behavior down to digital circuits and physical-level hardware trust.</p></article>
+    <article class="card purple"><div class="icon">◇</div><h3>Current direction</h3><p>Investigating hidden vulnerabilities in modern processors and GPUs, especially leakage channels and security-relevant performance behavior.</p></article>
+    <article class="card cyan"><div class="icon">✦</div><h3>Engineering depth</h3><p>Digital ASIC design, embedded Linux, FPGA/SoC development, smart-grid systems, automotive electronics, and IoT security applications.</p></article>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">Profile</div><h2>Research with hardware-level intuition and system-level consequences.</h2></div>
+      <a class="btn ghost" href="education.html">Academic timeline</a>
+    </div>
+    <div class="grid two">
+      <div class="card"><p>Ahmad Shabani is a researcher in hardware and computer security and digital ASIC design. His work focuses on efficient countermeasures against Hardware Trojans, lightweight PUF-based authentication protocols, and security analysis across multiple abstraction levels.</p><p>His academic path connects rigorous doctoral research in digital electronic systems with faculty teaching, industrial ASIC projects, embedded systems, and current postdoctoral research at KTH Royal Institute of Technology.</p></div>
+      <div class="card"><h3>Research focus</h3><div class="tags"><span class="tag">Hardware Trojans</span><span class="tag">PUF Authentication</span><span class="tag">GPU Security</span><span class="tag">Microarchitectural Security</span><span class="tag">Digital ASIC</span><span class="tag">Smart Grid Security</span><span class="tag">Embedded Linux</span><span class="tag">FPGA/SoC</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section compact">
+  <div class="container">
+    <div class="section-head"><div><div class="kicker">Highlights</div><h2>Selected milestones</h2></div></div>
+    <div class="timeline">
+      <div class="timeline-item" data-year="2025–"><h3>Postdoctoral Researcher · KTH Royal Institute of Technology</h3><p>Research on processor security and hidden vulnerabilities in modern computing platforms.</p></div>
+      <div class="timeline-item" data-year="2024–"><h3>Assistant Professor · Amirkabir University of Technology</h3><p>Faculty role in computer architecture, logic design, cyber-physical systems, and digital system design automation.</p></div>
+      <div class="timeline-item" data-year="2021"><h3>Ph.D. · University of Tehran</h3><p>Dissertation on Hardware Trojan detection using Design for Hardware Trust, evaluated as excellent.</p></div>
+    </div>
+  </div>
+</section>
 </main>
 <footer class="footer">
   <div class="container footer-grid">
