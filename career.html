@@ -427,7 +427,7 @@
         var(--card, #ffffff);
       border: 1px solid var(--border, rgba(30,41,59,0.12));
       box-shadow: 0 14px 32px rgba(15,23,42,0.07);
-      min-height: 130px;
+      min-height: 148px;
     }
 
     body.dark .skill-metric-card {
@@ -528,6 +528,60 @@
       }
     }
 
+  
+    /* Refined visual style for listed tools inside skill metric cards */
+    .skill-metric-card p {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px !important;
+      color: inherit !important;
+      font-size: 0 !important;
+      line-height: 1 !important;
+    }
+
+    .skill-metric-card p .skill-tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 9px 6px 8px;
+      border-radius: 999px;
+      color: #31415c;
+      background: linear-gradient(135deg, rgba(255,255,255,0.86), rgba(245,249,255,0.92));
+      border: 1px solid rgba(30,41,59,0.10);
+      box-shadow: 0 6px 16px rgba(15,23,42,0.055);
+      font-size: 0.67rem;
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .skill-metric-card p .skill-tool::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1677b9, #70d7ff);
+      box-shadow: 0 0 0 3px rgba(112, 215, 255, 0.13);
+    }
+
+    .skill-metric-card p .skill-tool:nth-child(3n + 1)::before {
+      background: linear-gradient(135deg, #f5b942, #ffe788);
+      box-shadow: 0 0 0 3px rgba(255, 231, 136, 0.15);
+    }
+
+    .skill-metric-card p .skill-tool:nth-child(3n + 2)::before {
+      background: linear-gradient(135deg, #42b883, #7ee0b2);
+      box-shadow: 0 0 0 3px rgba(126, 224, 178, 0.14);
+    }
+
+    body.dark .skill-metric-card p .skill-tool {
+      color: #e7efff;
+      background: linear-gradient(135deg, rgba(255,255,255,0.070), rgba(255,255,255,0.035));
+      border-color: rgba(255,255,255,0.10);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+    }
+
   </style>
 </head>
 <body>
@@ -552,7 +606,13 @@
   <section class="career-hero">
     <div class="container">
       <h1>Career</h1>
-      <p>Education, professional experience, and honors across hardware security, digital systems, embedded Linux, ASIC/FPGA design, and security-aware engineering.</p>
+      <p><span class="skill-tool">Education</span>
+              <span class="skill-tool">professional experience</span>
+              <span class="skill-tool">and honors across hardware security</span>
+              <span class="skill-tool">digital systems</span>
+              <span class="skill-tool">embedded Linux</span>
+              <span class="skill-tool">ASIC/FPGA design</span>
+              <span class="skill-tool">and security-aware engineering.</span></p>
     </div>
   </section>
 
@@ -794,7 +854,7 @@
             <div class="skill-dots" aria-label="Skill level 4 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Hardware Description Language</h3>
-          <p>VHDL / Verilog — proficient in synthesizable hardware description.</p>
+          <p><span class="skill-tool">VHDL / Verilog — proficient in synthesizable hardware description.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -812,7 +872,9 @@
             <div class="skill-dots" aria-label="Skill level 4 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Calibre</h3>
-          <p>DRC, LVS, PEX — post-layout checking and netlist extraction.</p>
+          <p><span class="skill-tool">DRC</span>
+              <span class="skill-tool">LVS</span>
+              <span class="skill-tool">PEX — post-layout checking and netlist extraction.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -821,7 +883,11 @@
             <div class="skill-dots" aria-label="Skill level 4 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Synopsys IC Design Toolchain</h3>
-          <p>Design Compiler, Formality, VCS, DFT, PrimeTime.</p>
+          <p><span class="skill-tool">Design Compiler</span>
+              <span class="skill-tool">Formality</span>
+              <span class="skill-tool">VCS</span>
+              <span class="skill-tool">DFT</span>
+              <span class="skill-tool">PrimeTime.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -830,7 +896,11 @@
             <div class="skill-dots" aria-label="Skill level 3 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Cadence IC Design Toolchain</h3>
-          <p>Virtuoso, Innovus, Voltus, Quantus, Abstract Generator.</p>
+          <p><span class="skill-tool">Virtuoso</span>
+              <span class="skill-tool">Innovus</span>
+              <span class="skill-tool">Voltus</span>
+              <span class="skill-tool">Quantus</span>
+              <span class="skill-tool">Abstract Generator.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -839,7 +909,18 @@
             <div class="skill-dots" aria-label="Skill level 4 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Communications Protocols</h3>
-          <p>SPI, I2C, UART, CAN, LIN, RS485, RS232, MQTT, HTTP/HTTPS, WiFi, BLE, Ethernet.</p>
+          <p><span class="skill-tool">SPI</span>
+              <span class="skill-tool">I2C</span>
+              <span class="skill-tool">UART</span>
+              <span class="skill-tool">CAN</span>
+              <span class="skill-tool">LIN</span>
+              <span class="skill-tool">RS485</span>
+              <span class="skill-tool">RS232</span>
+              <span class="skill-tool">MQTT</span>
+              <span class="skill-tool">HTTP/HTTPS</span>
+              <span class="skill-tool">WiFi</span>
+              <span class="skill-tool">BLE</span>
+              <span class="skill-tool">Ethernet.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -848,7 +929,15 @@
             <div class="skill-dots" aria-label="Skill level 3 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span><span class="skill-dot"></span></div>
           </div>
           <h3>EDA &amp; IDE</h3>
-          <p>Altium Designer, Icarus Verilog, Quartus, Vivado, Vitis, PetaLinux, NetBeans, VS Code, Atmel Studio.</p>
+          <p><span class="skill-tool">Altium Designer</span>
+              <span class="skill-tool">Icarus Verilog</span>
+              <span class="skill-tool">Quartus</span>
+              <span class="skill-tool">Vivado</span>
+              <span class="skill-tool">Vitis</span>
+              <span class="skill-tool">PetaLinux</span>
+              <span class="skill-tool">NetBeans</span>
+              <span class="skill-tool">VS Code</span>
+              <span class="skill-tool">Atmel Studio.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -857,7 +946,12 @@
             <div class="skill-dots" aria-label="Skill level 3 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Microcontrollers &amp; SoCs</h3>
-          <p>ESP32, ESP8266, AVR, ATTiny85, STM32F103C8T6, NXP-LPC1788.</p>
+          <p><span class="skill-tool">ESP32</span>
+              <span class="skill-tool">ESP8266</span>
+              <span class="skill-tool">AVR</span>
+              <span class="skill-tool">ATTiny85</span>
+              <span class="skill-tool">STM32F103C8T6</span>
+              <span class="skill-tool">NXP-LPC1788.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -866,7 +960,10 @@
             <div class="skill-dots" aria-label="Skill level 3 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span><span class="skill-dot"></span></div>
           </div>
           <h3>FPGA-Based Embedded System Design</h3>
-          <p>ZYNQ embedded platform, ZTurn, Alinx, Zybo.</p>
+          <p><span class="skill-tool">ZYNQ embedded platform</span>
+              <span class="skill-tool">ZTurn</span>
+              <span class="skill-tool">Alinx</span>
+              <span class="skill-tool">Zybo.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -875,7 +972,14 @@
             <div class="skill-dots" aria-label="Skill level 3 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Sensors &amp; Modules</h3>
-          <p>MPU6050, OLED, Hall sensors, IR/PIR, ADCs, RTCs, WiFi modules, light sensors.</p>
+          <p><span class="skill-tool">MPU6050</span>
+              <span class="skill-tool">OLED</span>
+              <span class="skill-tool">Hall sensors</span>
+              <span class="skill-tool">IR/PIR</span>
+              <span class="skill-tool">ADCs</span>
+              <span class="skill-tool">RTCs</span>
+              <span class="skill-tool">WiFi modules</span>
+              <span class="skill-tool">light sensors.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -884,7 +988,12 @@
             <div class="skill-dots" aria-label="Skill level 3 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Development Boards</h3>
-          <p>ESP32CAM, ESP32, Arduino Uno/Mega, NodeMCU, Raspberry Pi Zero W, Raspberry Pi Pico.</p>
+          <p><span class="skill-tool">ESP32CAM</span>
+              <span class="skill-tool">ESP32</span>
+              <span class="skill-tool">Arduino Uno/Mega</span>
+              <span class="skill-tool">NodeMCU</span>
+              <span class="skill-tool">Raspberry Pi Zero W</span>
+              <span class="skill-tool">Raspberry Pi Pico.</span></p>
         </article>
 
         <article class="skill-metric-card">
@@ -893,7 +1002,15 @@
             <div class="skill-dots" aria-label="Skill level 3 out of 5"><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot active"></span><span class="skill-dot"></span><span class="skill-dot"></span></div>
           </div>
           <h3>Programming Language</h3>
-          <p>Perl, C/C++, Python, Fortran, CUDA C, SystemC, TCL, VHDL, Verilog.</p>
+          <p><span class="skill-tool">Perl</span>
+              <span class="skill-tool">C/C++</span>
+              <span class="skill-tool">Python</span>
+              <span class="skill-tool">Fortran</span>
+              <span class="skill-tool">CUDA C</span>
+              <span class="skill-tool">SystemC</span>
+              <span class="skill-tool">TCL</span>
+              <span class="skill-tool">VHDL</span>
+              <span class="skill-tool">Verilog.</span></p>
         </article>
 
       </div>
