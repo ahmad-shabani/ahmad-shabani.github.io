@@ -1,145 +1,587 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact | Ahmad Shabani</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="index.html"><span class="logo">AS</span><span>Ahmad Shabani</span></a>
-    <button class="mobile-menu" data-nav-toggle>Menu</button>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="publications.html">Publications</a>
-      <a href="education.html">Education</a>
-      <a href="experience.html">Experience</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="projects.html">Projects</a>
-      <a href="awards.html">Awards</a>
-      <a class="active" href="contact.html">Contact</a>
-      <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">CV</a>
-      <button type="button" data-theme-toggle>◐</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Ahmad Shabani</title>
+  <meta name="description" content="Contact information for Ahmad Shabani." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* ===== Compact Contact page ===== */
+    .contact-compact-hero {
+      padding: 58px 0 26px;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255, 231, 136, 0.13), transparent 30%),
+        radial-gradient(circle at 84% 16%, rgba(112, 215, 255, 0.13), transparent 28%),
+        linear-gradient(135deg, #171d34 0%, #251250 48%, #0b1024 100%);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-compact-hero .container,
+    .contact-compact-body .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    .contact-compact-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 231, 136, 0.42);
+      color: #ffe788;
+      background: rgba(255, 231, 136, 0.08);
+      font-size: 0.70rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-compact-hero h1 {
+      margin: 12px 0 7px;
+      color: #fff;
+      font-size: clamp(2rem, 3.4vw, 3.35rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .contact-compact-hero p {
+      max-width: 760px;
+      margin: 0;
+      color: rgba(238, 244, 255, 0.80);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .contact-compact-body {
+      padding: 26px 0 52px;
+      background: #080d1d;
+      min-height: 68vh;
+    }
+
+    .contact-grid-compact {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .contact-left-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-panel {
+      border: 1px solid rgba(150, 170, 230, 0.20);
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.045), transparent 36%),
+        rgba(18, 26, 49, 0.86);
+      overflow: hidden;
+      box-shadow: 0 16px 38px rgba(0,0,0,0.18);
+    }
+
+    .contact-panel-inner {
+      padding: 16px;
+    }
+
+    .contact-section-title {
+      margin: 0 0 11px;
+      color: #eef4ff;
+      font-size: 1.05rem;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      font-weight: 900;
+    }
+
+    .contact-list-compact {
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-item-compact {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.035);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .contact-item-compact:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 231, 136, 0.32);
+      background: rgba(255, 231, 136, 0.065);
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      color: #101426;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      box-shadow: 0 10px 24px rgba(255, 214, 111, 0.12);
+    }
+
+    .contact-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-icon.blue {
+      color: #07121f;
+      background: linear-gradient(135deg, #9de8ff, #62c9ff);
+    }
+
+    .contact-icon.green {
+      color: #061a12;
+      background: linear-gradient(135deg, #b2ffd8, #6de2ac);
+    }
+
+    .contact-label {
+      display: block;
+      color: #aebbd4;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .contact-value {
+      display: block;
+      color: #eef4ff;
+      font-size: 0.88rem;
+      font-weight: 800;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .contact-actions-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .contact-button-compact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 40px;
+      padding: 9px 12px;
+      border-radius: 14px;
+      color: #101426;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 950;
+      transition: transform 0.16s ease, filter 0.16s ease;
+      white-space: nowrap;
+    }
+
+    .contact-button-compact.secondary {
+      color: #eaf5ff;
+      background: rgba(120, 215, 255, 0.12);
+      border: 1px solid rgba(120, 215, 255, 0.34);
+    }
+
+    .contact-button-compact:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+    }
+
+    .research-interest-panel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-interest-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: linear-gradient(180deg, #ffe788, #7dd7ff, #8d5cf6);
+    }
+
+    .research-interest-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .research-interest-main-icon {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      color: #101426;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      box-shadow: 0 14px 34px rgba(255, 214, 111, 0.13);
+    }
+
+    .research-interest-main-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.1;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .research-interest-title-wrap h2 {
+      margin: 0;
+      color: #eef4ff;
+      font-size: 1.02rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 950;
+    }
+
+    .research-interest-title-wrap p {
+      margin: 2px 0 0;
+      color: #aebbd4;
+      font-size: 0.72rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .research-interest-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 7px;
+    }
+
+    .research-interest-item {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      align-items: center;
+      gap: 9px;
+      padding: 8px 9px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.045), transparent 46%),
+        rgba(255,255,255,0.032);
+    }
+
+    .research-interest-icon {
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: #eaf5ff;
+      background: rgba(125, 215, 255, 0.12);
+      border: 1px solid rgba(125, 215, 255, 0.22);
+    }
+
+    .research-interest-icon.gold {
+      color: #fff0a5;
+      background: rgba(255, 231, 136, 0.10);
+      border-color: rgba(255, 231, 136, 0.25);
+    }
+
+    .research-interest-icon.green {
+      color: #b9ffd9;
+      background: rgba(126, 224, 178, 0.10);
+      border-color: rgba(126, 224, 178, 0.22);
+    }
+
+    .research-interest-icon.purple {
+      color: #dfc9ff;
+      background: rgba(141, 92, 246, 0.12);
+      border-color: rgba(141, 92, 246, 0.25);
+    }
+
+    .research-interest-icon svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.15;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .research-interest-text {
+      color: #e8f0ff;
+      font-size: 0.78rem;
+      line-height: 1.25;
+      font-weight: 850;
+      letter-spacing: -0.005em;
+    }
+
+    .address-card-compact {
+      padding: 14px 16px 0;
+    }
+
+    .address-line {
+      margin: 0;
+      color: #eef4ff;
+      font-size: 0.92rem;
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    .address-muted {
+      color: #aebbd4;
+      font-size: 0.78rem;
+      font-weight: 750;
+      margin-top: 4px;
+    }
+
+    .map-frame-compact {
+      margin-top: 12px;
+      border-radius: 0 0 20px 20px;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      height: 300px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .map-frame-compact iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      filter: saturate(0.92) contrast(1.03);
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid-compact {
+        grid-template-columns: 1fr;
+      }
+
+      .map-frame-compact {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .contact-compact-hero {
+        padding: 52px 0 24px;
+      }
+
+      .contact-actions-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-value {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="index.html">Ahmad Shabani</a>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="awards.html">Awards</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-  </div>
-</header>
-<main>
-  <section class="page-hero contact-hero">
-    <div class="container contact-hero-inner">
-      <div>
-        <div class="eyebrow">Contact</div>
-        <h1>Get in touch.</h1>
-        <p>Academic profile, contact details, office location, and research interests.</p>
+  </header>
+
+  <main>
+    <section class="contact-compact-hero">
+      <div class="container">
+        <span class="contact-compact-kicker">Get in touch</span>
+        <h1>Contact</h1>
+        <p>
+          Research, teaching, collaboration, reviewing, and academic/industrial security discussions.
+        </p>
       </div>
-      <a class="contact-cv-download" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">
-        <span class="contact-cv-icon" aria-hidden="true">↓</span>
-        <span><strong>Download CV</strong><small>PDF document</small></span>
-      </a>
-    </div>
-  </section>
+    </section>
 
-  <section class="section contact-section">
-    <div class="container contact-grid">
-      <article class="contact-card contact-main-card">
-        <div class="contact-card-head">
-          <span class="contact-icon-box" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M4 6.75A2.75 2.75 0 0 1 6.75 4h10.5A2.75 2.75 0 0 1 20 6.75v10.5A2.75 2.75 0 0 1 17.25 20H6.75A2.75 2.75 0 0 1 4 17.25V6.75Zm2.2-.15 5.8 4.65 5.8-4.65a1.26 1.26 0 0 0-.55-.13H6.75c-.2 0-.39.05-.55.13Zm12.33 1.5-5.74 4.6a1.25 1.25 0 0 1-1.58 0L5.47 8.1v9.15c0 .7.57 1.28 1.28 1.28h10.5c.7 0 1.28-.57 1.28-1.28V8.1Z"/></svg>
-          </span>
-          <div>
-            <h2>Contact details</h2>
-            <p class="contact-muted">The best way to reach me is through my KTH email.</p>
-          </div>
+    <section class="contact-compact-body">
+      <div class="container">
+        <div class="contact-grid-compact">
+          <aside class="contact-left-stack">
+            <section class="contact-panel">
+              <div class="contact-panel-inner">
+                <h2 class="contact-section-title">Contact details</h2>
+
+                <div class="contact-list-compact">
+                  <a class="contact-item-compact" href="mailto:ahmadsh@kth.se">
+                    <span class="contact-icon">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                        <path d="M3.5 7.5 12 13l8.5-5.5"></path>
+                      </svg>
+                    </span>
+                    <span>
+                      <span class="contact-label">Email</span>
+                      <span class="contact-value">ahmadsh@kth.se</span>
+                    </span>
+                  </a>
+
+                  <a class="contact-item-compact" href="https://kth.se/profile/ahmadsh" target="_blank" rel="noopener">
+                    <span class="contact-icon blue">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M3 12h18"></path>
+                        <path d="M12 3a14 14 0 0 1 0 18"></path>
+                        <path d="M12 3a14 14 0 0 0 0 18"></path>
+                      </svg>
+                    </span>
+                    <span>
+                      <span class="contact-label">Website</span>
+                      <span class="contact-value">KTH profile</span>
+                    </span>
+                  </a>
+
+                  <a class="contact-item-compact" href="https://linkedin.com/in/ahmad-shabani-316460101/" target="_blank" rel="noopener">
+                    <span class="contact-icon blue">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M8 11v7"></path>
+                        <path d="M8 8v.01"></path>
+                        <path d="M12 18v-7"></path>
+                        <path d="M12 14.5c0-2 1.2-3.5 3-3.5s3 1.2 3 3.8V18"></path>
+                        <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                      </svg>
+                    </span>
+                    <span>
+                      <span class="contact-label">LinkedIn</span>
+                      <span class="contact-value">ahmad-shabani-316460101</span>
+                    </span>
+                  </a>
+
+                  <a class="contact-item-compact" href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">
+                    <span class="contact-icon green">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3 3 8l9 5 9-5-9-5Z"></path>
+                        <path d="M6 10.5V15c1.8 2.2 10.2 2.2 12 0v-4.5"></path>
+                        <path d="M21 8v6"></path>
+                      </svg>
+                    </span>
+                    <span>
+                      <span class="contact-label">Scholar</span>
+                      <span class="contact-value">Google Scholar profile</span>
+                    </span>
+                  </a>
+                </div>
+
+                <div class="contact-actions-row">
+                  <a class="contact-button-compact" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+                  <a class="contact-button-compact secondary" href="https://maps.google.com/?q=Teknikringen%2033%2C%20SE-100%2044%20Stockholm%2C%20Sweden" target="_blank" rel="noopener">Open map</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="contact-panel research-interest-panel">
+              <div class="contact-panel-inner">
+                <div class="research-interest-head">
+                  <span class="research-interest-main-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 3v4"></path>
+                      <path d="M12 17v4"></path>
+                      <path d="M3 12h4"></path>
+                      <path d="M17 12h4"></path>
+                      <rect x="7" y="7" width="10" height="10" rx="2"></rect>
+                      <path d="M10 10h4v4h-4z"></path>
+                    </svg>
+                  </span>
+                  <span class="research-interest-title-wrap">
+                    <h2>Research interests</h2>
+                    <p>Hardware security, trustworthy systems, and implementation-aware design.</p>
+                  </span>
+                </div>
+
+                <div class="research-interest-grid">
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon gold">
+                      <svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 7.5 8 8 4.5-.5 8-3 8-8V7l-8-4Z"></path><path d="M9 12l2 2 4-5"></path></svg>
+                    </span>
+                    <span class="research-interest-text">Hardware Trojans & Security</span>
+                  </div>
+
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon green">
+                      <svg viewBox="0 0 24 24"><path d="M7 11V7a5 5 0 0 1 10 0v4"></path><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M12 15v2"></path></svg>
+                    </span>
+                    <span class="research-interest-text">PUF-Based Authentication</span>
+                  </div>
+
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon purple">
+                      <svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M4 17h16"></path><path d="M7 4v16"></path><path d="M17 4v16"></path><rect x="9" y="9" width="6" height="6" rx="1"></rect></svg>
+                    </span>
+                    <span class="research-interest-text">Design for Hardware Trust</span>
+                  </div>
+
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon">
+                      <svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 10-13h-7l0-7Z"></path></svg>
+                    </span>
+                    <span class="research-interest-text">Low-Power VLSI Design</span>
+                  </div>
+
+                  <div class="research-interest-item">
+                    <span class="research-interest-icon gold">
+                      <svg viewBox="0 0 24 24"><path d="M4 12c3-6 13-6 16 0-3 6-13 6-16 0Z"></path><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3"></path><path d="M12 19v3"></path></svg>
+                    </span>
+                    <span class="research-interest-text">Transient Microarchitectural Attacks</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </aside>
+
+          <section class="contact-panel">
+            <div class="address-card-compact">
+              <h2 class="contact-section-title">Office location</h2>
+              <p class="address-line">Teknikringen 33, floor 3</p>
+              <p class="address-muted">SE-100 44 Stockholm, Sweden</p>
+            </div>
+            <div class="map-frame-compact" aria-label="Map showing Teknikringen 33, Stockholm">
+              <iframe
+                title="Map to Teknikringen 33, Stockholm"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Teknikringen%2033%2C%20SE-100%2044%20Stockholm%2C%20Sweden&output=embed">
+              </iframe>
+            </div>
+          </section>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="contact-link-list">
-          <a class="contact-link-card" href="mailto:ahmadsh@kth.se">
-            <span class="contact-link-icon email" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M3.75 6.75A2.75 2.75 0 0 1 6.5 4h11a2.75 2.75 0 0 1 2.75 2.75v10.5A2.75 2.75 0 0 1 17.5 20h-11a2.75 2.75 0 0 1-2.75-2.75V6.75Zm2.75-1.2c-.28 0-.54.08-.77.22l6.27 5.02 6.27-5.02a1.2 1.2 0 0 0-.77-.27h-11Zm12.25 2.08-5.82 4.66a1.5 1.5 0 0 1-1.86 0L5.25 7.63v9.62c0 .69.56 1.25 1.25 1.25h11c.69 0 1.25-.56 1.25-1.25V7.63Z"/></svg>
-            </span>
-            <span><strong>Email</strong><small>ahmadsh@kth.se</small></span>
-          </a>
-
-          <a class="contact-link-card" href="https://ahmad-shabani.github.io/" target="_blank" rel="noopener">
-            <span class="contact-link-icon website" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 2.75A9.25 9.25 0 1 0 12 21.25 9.25 9.25 0 0 0 12 2.75Zm0 1.5c.92 0 1.93 1.04 2.58 2.75h-5.16C10.07 5.29 11.08 4.25 12 4.25ZM8.95 8.5h6.1c.13.73.2 1.5.2 2.31v.44h-6.5v-.44c0-.81.07-1.58.2-2.31Zm-4.62 2.75a7.7 7.7 0 0 1 1.63-4.46c.44.18.9.33 1.38.45a14.1 14.1 0 0 0-.1 1.26c-.02.74-.03 1.5 0 2.75H4.33Zm0 1.5h2.91c.03 1.18.15 2.29.36 3.25-.57.14-1.12.32-1.64.54a7.7 7.7 0 0 1-1.63-3.79Zm7.67 7c-.92 0-1.93-1.04-2.58-2.75h5.16c-.65 1.71-1.66 2.75-2.58 2.75Zm3.05-4.25h-6.1a13.54 13.54 0 0 1-.2-2.75h6.5c-.02 1.0-.08 1.93-.2 2.75Zm2.99 1.04c-.52-.22-1.07-.4-1.64-.54.21-.96.33-2.07.36-3.25h2.91a7.7 7.7 0 0 1-1.63 3.79Zm-1.28-5.29c.03-1.25.02-2.01 0-2.75-.03-.43-.06-.85-.1-1.26.48-.12.94-.27 1.38-.45a7.7 7.7 0 0 1 1.63 4.46h-2.91ZM17 5.63c-.23.08-.47.16-.71.22a8.18 8.18 0 0 0-.73-1.3A7.8 7.8 0 0 1 17 5.63ZM8.44 4.55c-.28.39-.52.83-.73 1.3-.24-.06-.48-.14-.71-.22a7.8 7.8 0 0 1 1.44-1.08ZM7 17.37c.23-.08.47-.16.71-.22.21.47.45.91.73 1.3A7.8 7.8 0 0 1 7 17.37Zm8.56 1.08c.28-.39.52-.83.73-1.3.24.06.48.14.71.22a7.8 7.8 0 0 1-1.44 1.08Z"/></svg>
-            </span>
-            <span><strong>Website</strong><small>ahmad-shabani.github.io</small></span>
-          </a>
-
-          <a class="contact-link-card" href="https://kth.se/profile/ahmadsh" target="_blank" rel="noopener">
-            <span class="contact-link-icon kth" aria-hidden="true">K</span>
-            <span><strong>KTH Profile</strong><small>kth.se/profile/ahmadsh</small></span>
-          </a>
-
-          <a class="contact-link-card" href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">
-            <span class="contact-link-icon scholar" aria-hidden="true">G</span>
-            <span><strong>Google Scholar</strong><small>Publication profile</small></span>
-          </a>
-
-          <a class="contact-link-card" href="https://linkedin.com/in/ahmad-shabani-316460101/" target="_blank" rel="noopener">
-            <span class="contact-link-icon linkedin" aria-hidden="true">in</span>
-            <span><strong>LinkedIn</strong><small>Professional profile</small></span>
-          </a>
-        </div>
-      </article>
-
-      <aside class="contact-card contact-location-card">
-        <div class="contact-card-head small-head">
-          <span class="contact-icon-box map" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2.75a6.75 6.75 0 0 0-6.75 6.75c0 4.68 5.6 10.74 5.84 11a1.27 1.27 0 0 0 1.82 0c.24-.26 5.84-6.32 5.84-11A6.75 6.75 0 0 0 12 2.75Zm0 9.4A2.65 2.65 0 1 1 12 6.85a2.65 2.65 0 0 1 0 5.3Z"/></svg>
-          </span>
-          <div>
-            <h2>Office location</h2>
-            <p class="contact-muted">KTH Royal Institute of Technology</p>
-          </div>
-        </div>
-        <div class="contact-address-box">
-          <strong>Teknikringen 33, floor 3</strong>
-          <span>SE-100 44 Stockholm, Sweden</span>
-        </div>
-        <div class="contact-map-frame" aria-label="Map showing Teknikringen 33, Stockholm">
-          <iframe
-            title="Map to Teknikringen 33, Stockholm"
-            src="https://www.google.com/maps?q=Teknikringen%2033%2C%20SE-100%2044%20Stockholm%2C%20Sweden&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <a class="contact-map-button" href="https://www.google.com/maps/search/?api=1&query=Teknikringen%2033%2C%20SE-100%2044%20Stockholm%2C%20Sweden" target="_blank" rel="noopener">Open larger map ↗</a>
-      </aside>
-
-      <article class="contact-card contact-research-card">
-        <div class="contact-card-head small-head">
-          <span class="contact-icon-box research" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8.75 3.5a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1v1.75h.5A2.25 2.25 0 0 1 18 7.5v1.36a6.75 6.75 0 1 1-12 4.25V7.5a2.25 2.25 0 0 1 2.25-2.25h.5V3.5Zm1.5 1.75h3.5V4h-3.5v1.25ZM7.5 9.5h9V7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0-.75.75v2Zm9.1 1.5H7.4a5.25 5.25 0 1 0 9.2 0ZM12 13.25a1.25 1.25 0 0 1 1.25 1.25v.25h.25a1.25 1.25 0 1 1 0 2.5h-.25v.25a1.25 1.25 0 1 1-2.5 0v-.25h-.25a1.25 1.25 0 1 1 0-2.5h.25v-.25A1.25 1.25 0 0 1 12 13.25Z"/></svg>
-          </span>
-          <div>
-            <h2>Research interests</h2>
-            <p class="contact-muted">Selected areas from my academic profile.</p>
-          </div>
-        </div>
-        <div class="research-interest-grid">
-          <span>Hardware Trojans &amp; Security</span>
-          <span>PUF-Based Authentication</span>
-          <span>Design for Hardware Trust</span>
-          <span>Low-Power VLSI Design</span>
-          <span>Transient Microarchitectural Attacks</span>
-        </div>
-      </article>
-
-      <article class="contact-card contact-cv-card">
-        <span class="contact-mini-label">Curriculum Vitae</span>
-        <h2>Full academic CV</h2>
-        <p class="contact-muted">Download the latest PDF version of my CV, including education, academic appointments, teaching, projects, and awards.</p>
-        <a class="btn gold contact-cv-button" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV ↓</a>
-      </article>
-    </div>
-  </section>
-</main><footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <strong>Ahmad Shabani</strong>
-      <div class="muted">Hardware & Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
-    </div>
-    <div>
-      <a href="mailto:ahmadsh@kth.se">ahmadsh@kth.se</a> ·
-      <a href="https://kth.se/profile/ahmadsh" target="_blank" rel="noopener">KTH Profile</a> ·
-      <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
-    </div>
-  </div>
-</footer>
-<script src="assets/js/main.js"></script></body></html>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
