@@ -1,40 +1,439 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Projects | Ahmad Shabani</title><link rel="stylesheet" href="assets/css/style.css"></head><body><header class="topbar">
-  <div class="container nav">
-    <a class="brand" href="index.html"><span class="logo">AS</span><span>Ahmad Shabani</span></a>
-    <button class="mobile-menu" data-nav-toggle>Menu</button>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="publications.html">Publications</a>
-      <a href="education.html">Education</a>
-      <a href="experience.html">Experience</a>
-      <a href="teaching.html">Teaching</a>
-      <a href="projects.html">Projects</a>
-      <a href="awards.html">Awards</a>
-      <a href="contact.html">Contact</a>
-      <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank">CV</a>
-      <button type="button" data-theme-toggle>◐</button>
-    </nav>
-  </div>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Projects | Ahmad Shabani</title>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<style>
+    .projects-goodwill {
+      --pg-bg: #080d1d;
+      --pg-card: rgba(18, 26, 49, .88);
+      --pg-card-hover: rgba(23, 34, 64, .96);
+      --pg-border: rgba(154, 171, 225, .18);
+      --pg-border-strong: rgba(255, 232, 140, .36);
+      --pg-text: #eef4ff;
+      --pg-muted: #aeb9d2;
+      --pg-gold: #ffe88b;
+      --pg-purple: #8e5cf6;
+      --pg-cyan: #70d7ff;
+      --pg-green: #7ee0b2;
+      background: var(--pg-bg);
+      padding: 30px 0 58px;
+    }
+
+    .projects-goodwill .container { max-width: 1180px; }
+
+    .projects-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--pg-border);
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+    }
+
+    .projects-panel-title {
+      color: var(--pg-text);
+      font-size: .98rem;
+      font-weight: 850;
+      letter-spacing: -.01em;
+    }
+
+    .project-filters { display: flex; flex-wrap: wrap; gap: 7px; justify-content: flex-end; }
+
+    .project-filter {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.045);
+      color: var(--pg-muted);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .74rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .15s ease;
+    }
+
+    .project-filter:hover,
+    .project-filter.active {
+      background: var(--pg-gold);
+      color: #11172a;
+      border-color: rgba(255,232,140,.7);
+      transform: translateY(-1px);
+    }
+
+    .project-list { display: grid; gap: 7px; }
+
+    .project-row {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--pg-border);
+      border-radius: 17px;
+      background: linear-gradient(135deg, rgba(255,255,255,.04), transparent 36%), var(--pg-card);
+      transition: transform .16s ease, border-color .16s ease, background .16s ease;
+    }
+
+    .project-row::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--pg-gold), var(--pg-purple), var(--pg-cyan));
+    }
+
+    .project-row:hover,
+    .project-row.open {
+      background: linear-gradient(135deg, rgba(255,232,140,.055), transparent 34%), var(--pg-card-hover);
+      border-color: var(--pg-border-strong);
+      transform: translateY(-1px);
+    }
+
+    .project-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 150px minmax(260px, auto);
+      align-items: center;
+      gap: 10px;
+      padding: 7px 12px 7px 18px;
+    }
+
+    .project-title-area { min-width: 0; }
+    .project-title {
+      margin: 0;
+      color: var(--pg-text);
+      font-size: .92rem;
+      line-height: 1.28;
+      font-weight: 780;
+      letter-spacing: -.012em;
+    }
+    .project-subtitle {
+      margin-top: 1px;
+      color: var(--pg-muted);
+      font-size: .71rem;
+      line-height: 1.3;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      min-width: 130px;
+    }
+
+    .project-year {
+      min-width: 76px;
+      text-align: center;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #fff1aa, #ffd56f);
+      color: #12172b;
+      font-size: .68rem;
+      font-weight: 900;
+      white-space: nowrap;
+      box-shadow: 0 6px 14px rgba(255, 213, 111, .12);
+    }
+
+    .project-org-main {
+      max-width: 150px;
+      color: #ffeba2;
+      font-size: .61rem;
+      font-weight: 850;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      opacity: .92;
+      text-align: center;
+    }
+
+    .project-tags-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 5px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+
+    .project-tag {
+      padding: 4px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.045);
+      color: #cdd8ef;
+      font-size: .63rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-shrink: 0;
+      padding-left: 8px;
+      border-left: 1px solid rgba(255,255,255,.12);
+    }
+
+    .project-github,
+    .project-more {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: .15s ease;
+    }
+
+    .project-github {
+      border: 1px solid rgba(112, 215, 255, .45);
+      background: rgba(112, 215, 255, .13);
+      color: #9fe5ff;
+    }
+
+    .project-more {
+      border: 1px solid rgba(255, 232, 140, .45);
+      background: rgba(255, 232, 140, .13);
+      color: #ffe88b;
+    }
+
+    .project-github:hover {
+      border-color: rgba(112, 215, 255, .82);
+      background: rgba(112, 215, 255, .22);
+      transform: translateY(-1px);
+    }
+
+    .project-more:hover {
+      border-color: rgba(255, 232, 140, .82);
+      background: rgba(255, 232, 140, .22);
+      transform: translateY(-1px);
+    }
+
+    .project-github svg { width: 16px; height: 16px; fill: currentColor; }
+    .project-more span { display: block; width: 15px; height: 2px; border-radius: 99px; background: currentColor; margin: 2px 0; transition: .16s ease; }
+    .project-row.open .project-more span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
+    .project-row.open .project-more span:nth-child(2) { opacity: 0; }
+    .project-row.open .project-more span:nth-child(3) { transform: translateY(-4px) rotate(-45deg); }
+
+    .project-detail {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      border-top: 1px solid transparent;
+      transition: max-height .26s ease, opacity .20s ease, border-color .20s ease;
+    }
+    .project-row.open .project-detail { max-height: 150px; opacity: 1; border-color: rgba(255,255,255,.08); }
+
+    .project-detail-inner {
+      display: block;
+      padding: 8px 12px 10px 18px;
+      background: rgba(4,8,20,.24);
+    }
+    .project-detail p {
+      margin: 0;
+      color: #cad5eb;
+      font-size: .78rem;
+      line-height: 1.55;
+    }
+    .project-org {
+      color: #ffeba2;
+      font-size: .69rem;
+      font-weight: 900;
+      white-space: nowrap;
+      padding: 5px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,232,140,.22);
+      background: rgba(255,232,140,.075);
+    }
+
+    @media (max-width: 980px) {
+      .project-main { grid-template-columns: minmax(0, 1fr) auto auto; }
+      .project-tags { grid-column: 1 / -1; justify-content: flex-start; }
+      .project-subtitle { white-space: normal; }
+    }
+
+    @media (max-width: 680px) {
+      .projects-panel { align-items: flex-start; flex-direction: column; }
+      .project-filters { justify-content: flex-start; }
+      .project-main { grid-template-columns: minmax(0, 1fr) auto; padding: 10px 11px 10px 16px; }
+      .project-year { min-width: auto; }
+      .project-tags, .project-actions { grid-column: 1 / -1; justify-content: flex-start; }
+      .project-detail-inner { grid-template-columns: 1fr; }
+      .project-org { width: fit-content; white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="container nav">
+<a class="brand" href="index.html"><span class="logo">AS</span><span>Ahmad Shabani</span></a>
+<button class="mobile-menu" data-nav-toggle="">Menu</button>
+<nav class="nav-links">
+<a href="index.html">Home</a>
+<a href="publications.html">Publications</a>
+<a href="education.html">Education</a>
+<a href="experience.html">Experience</a>
+<a href="teaching.html">Teaching</a>
+<a href="projects.html">Projects</a>
+<a href="awards.html">Awards</a>
+<a href="contact.html">Contact</a>
+<a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank">CV</a>
+<button data-theme-toggle="" type="button">◐</button>
+</nav>
+</div>
 </header>
-<main><section class="page-hero"><div class="container"><div class="eyebrow">Projects</div><h1>Research and industrial systems with security-aware design.</h1><p>Selected academic and industrial projects from smart grids and automotive ICs to IoT metering and FPGA-based test platforms.</p></div></section>
-<section class="section"><div class="container grid two">
-<article class="card accent"><h3>Security Measures in Distributed Management System for Smart Grid</h3><div class="meta">Iran's National Elites Foundation · University of Tehran · 2020</div><p>Evaluation of security measures for distributed smart-grid management infrastructure.</p></article>
-<article class="card purple"><h3>National IoT Ecosystem for Water and Wastewater Monitoring</h3><div class="meta">Niroo Research Institute · Smart Grid Center · 2018–2019</div><p>Monitoring and management platform based on IoT ecosystem design.</p></article>
-<article class="card cyan"><h3>Automatic Chip Tester for Automotive Application</h3><div class="meta">CROUSE PJS Co · 2024</div><p>Zynq FPGA SoC-based automatic chip testing platform for automotive applications.</p></article>
-<article class="card"><h3>High-Speed and Fault-Tolerant CAN Transceiver ASIC</h3><div class="meta">Mana Excellence Center · 2022–2023</div><p>Front-end and back-end digital ASIC design for automotive communication systems.</p></article>
-<article class="card"><h3>Smart Electricity Meter</h3><div class="meta">Shahab Co. · 2021–2022</div><p>Low-cost, non-destructive ESP-based meter for energy, voltage, and current measurement across twelve input channels.</p></article>
-<article class="card"><h3>Gas Meter Telemetry Add-on</h3><div class="meta">Shahab Co. · 2021–2022</div><p>Computer-vision telemetry device for adding supervised monitoring to traditional non-smart gas meters.</p></article>
-</div></section></main><footer class="footer">
-  <div class="container footer-grid">
-    <div>
-      <strong>Ahmad Shabani</strong>
-      <div class="muted">Hardware & Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
-    </div>
-    <div>
-      <a href="mailto:ahmadsh@kth.se">ahmadsh@kth.se</a> ·
+<main>
+<section class="page-hero">
+<div class="container">
+<div class="eyebrow">Projects</div>
+<h1>Research and industrial systems with security-aware design.</h1>
+<p>Selected academic and industrial projects from smart grids and automotive ICs to IoT metering and FPGA-based test platforms.</p>
+</div>
+</section>
+<section class="projects-goodwill">
+<div class="container">
+<div class="projects-panel">
+<div class="projects-panel-title">Compact project portfolio</div>
+<div aria-label="Project filters" class="project-filters">
+<button class="project-filter active" data-filter="all">All</button>
+<button class="project-filter" data-filter="hardware">Hardware</button>
+<button class="project-filter" data-filter="software">Software</button>
+<button class="project-filter" data-filter="asic">ASIC</button>
+<button class="project-filter" data-filter="fpga">FPGA</button>
+<button class="project-filter" data-filter="security">Security</button>
+</div>
+</div>
+<div class="project-list">
+<article class="project-row" data-tags="hardware software security">
+<div class="project-main">
+<div class="project-title-area">
+<h2 class="project-title">Evaluate Security Measures in Distributed Management System for Smart Grid</h2>
+<div class="project-subtitle">Security evaluation for distributed smart-grid management infrastructure</div>
+</div>
+
+<div class="project-meta"><span class="project-year">2020</span><div class="project-org-main">Iran's National Elites Foundation / University of Tehran</div></div><div class="project-tags-row"><div class="project-tags"><span class="project-tag">Security</span><span class="project-tag">Hardware</span><span class="project-tag">Smart Grid</span></div><div class="project-actions">
+<a aria-label="GitHub project link" class="project-github" href="https://github.com/ahmad-shabani" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"></path></svg></a>
+<button aria-label="Show more information" class="project-more" type="button"><span></span><span></span><span></span></button>
+</div></div>
+
+</div>
+<div class="project-detail"><div class="project-detail-inner"><p>Evaluation of security considerations and countermeasures for distributed management systems used in smart-grid environments.</p></div></div>
+</article>
+<article class="project-row" data-tags="hardware software security">
+<div class="project-main">
+<div class="project-title-area"><h2 class="project-title">National Project for Monitoring and Management of Water and Wastewater Based on IoT Ecosystem</h2><div class="project-subtitle">IoT platform for infrastructure monitoring and management</div></div>
+
+<div class="project-meta"><span class="project-year">2018–2019</span><div class="project-org-main">Niroo Research Institute, Smart Grid Center</div></div><div class="project-tags-row"><div class="project-tags"><span class="project-tag">IoT</span><span class="project-tag">Software</span><span class="project-tag">Hardware</span></div><div class="project-actions"><a aria-label="GitHub project link" class="project-github" href="https://github.com/ahmad-shabani" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"></path></svg></a><button aria-label="Show more information" class="project-more" type="button"><span></span><span></span><span></span></button></div></div>
+
+</div>
+<div class="project-detail"><div class="project-detail-inner"><p>Monitoring and management platform based on IoT ecosystem design for water and wastewater infrastructure.</p></div></div>
+</article>
+<article class="project-row" data-tags="hardware software security">
+<div class="project-main">
+<div class="project-title-area"><h2 class="project-title">Investigating Communication and Security Considerations of Smart Power Grid</h2><div class="project-subtitle">Supervised project on secure smart-grid communication</div></div>
+
+<div class="project-meta"><span class="project-year">2019</span><div class="project-org-main">Niroo Research Institute, Smart Grid Center</div></div><div class="project-tags-row"><div class="project-tags"><span class="project-tag">Security</span><span class="project-tag">Communication</span><span class="project-tag">Smart Grid</span></div><div class="project-actions"><a aria-label="GitHub project link" class="project-github" href="https://github.com/ahmad-shabani" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"></path></svg></a><button aria-label="Show more information" class="project-more" type="button"><span></span><span></span><span></span></button></div></div>
+
+</div>
+<div class="project-detail"><div class="project-detail-inner"><p>Research supervision focused on communication requirements, security risks, and design constraints in smart power-grid deployments.</p></div></div>
+</article>
+<article class="project-row" data-tags="hardware software fpga">
+<div class="project-main">
+<div class="project-title-area"><h2 class="project-title">Automatic Chip Tester for Automotive Application Based on Zynq FPGA SoC</h2><div class="project-subtitle">FPGA-based test automation for automotive chips</div></div>
+
+<div class="project-meta"><span class="project-year">2024</span><div class="project-org-main">CROUSE PJS Co.</div></div><div class="project-tags-row"><div class="project-tags"><span class="project-tag">FPGA</span><span class="project-tag">Hardware</span><span class="project-tag">Software</span></div><div class="project-actions"><a aria-label="GitHub project link" class="project-github" href="https://github.com/ahmad-shabani" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"></path></svg></a><button aria-label="Show more information" class="project-more" type="button"><span></span><span></span><span></span></button></div></div>
+
+</div>
+<div class="project-detail"><div class="project-detail-inner"><p>Zynq FPGA SoC-based automatic chip testing platform for automotive applications, integrating programmable logic, embedded software, and test workflows.</p></div></div>
+</article>
+<article class="project-row" data-tags="hardware asic security">
+<div class="project-main">
+<div class="project-title-area"><h2 class="project-title">Digital ASIC Design of High-Speed and Fault-Tolerant CAN Transceivers</h2><div class="project-subtitle">Front-end and back-end digital ASIC design</div></div>
+
+<div class="project-meta"><span class="project-year">2022–2023</span><div class="project-org-main">Mana Excellence Center</div></div><div class="project-tags-row"><div class="project-tags"><span class="project-tag">ASIC</span><span class="project-tag">Hardware</span><span class="project-tag">Automotive</span></div><div class="project-actions"><a aria-label="GitHub project link" class="project-github" href="https://github.com/ahmad-shabani" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.30-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"></path></svg></a><button aria-label="Show more information" class="project-more" type="button"><span></span><span></span><span></span></button></div></div>
+
+</div>
+<div class="project-detail"><div class="project-detail-inner"><p>Digital ASIC design for high-speed and fault-tolerant CAN transceivers, covering implementation-level design and automotive communication requirements.</p></div></div>
+</article>
+<article class="project-row" data-tags="hardware software">
+<div class="project-main">
+<div class="project-title-area"><h2 class="project-title">Smart Electricity Meter: Hardware and Firmware Development</h2><div class="project-subtitle">ESP-based twelve-channel energy, voltage, and current monitoring</div></div>
+
+<div class="project-meta"><span class="project-year">2021–2022</span><div class="project-org-main">Shahab Co.</div></div><div class="project-tags-row"><div class="project-tags"><span class="project-tag">Hardware</span><span class="project-tag">Firmware</span><span class="project-tag">IoT</span></div><div class="project-actions"><a aria-label="GitHub project link" class="project-github" href="https://github.com/hiddenman23?tab=repositories" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"></path></svg></a><button aria-label="Show more information" class="project-more" type="button"><span></span><span></span><span></span></button></div></div>
+
+</div>
+<div class="project-detail"><div class="project-detail-inner"><p>Low-cost, non-destructive ESP-based smart meter for measuring energy, voltage, and current across twelve input channels.</p></div></div>
+</article>
+<article class="project-row" data-tags="hardware asic security">
+<div class="project-main">
+<div class="project-title-area"><h2 class="project-title">Digital ASIC Verification and Back-End of Immobilizer IC Used in Automotive Key-Fobs</h2><div class="project-subtitle">Digital transponder IC implementation for automotive key-fobs</div></div>
+
+<div class="project-meta"><span class="project-year">2023</span><div class="project-org-main">Freelance Project</div></div><div class="project-tags-row"><div class="project-tags"><span class="project-tag">ASIC</span><span class="project-tag">Verification</span><span class="project-tag">Automotive</span></div><div class="project-actions"><a aria-label="GitHub project link" class="project-github" href="https://github.com/ahmad-shabani" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"></path></svg></a><button aria-label="Show more information" class="project-more" type="button"><span></span><span></span><span></span></button></div></div>
+
+</div>
+<div class="project-detail"><div class="project-detail-inner"><p>Verification and back-end implementation of digital parts of a transponder IC used in automotive key-fobs.</p></div></div>
+</article>
+<article class="project-row" data-tags="hardware software">
+<div class="project-main">
+<div class="project-title-area"><h2 class="project-title">Gas Meter Telemetry Add-on Based on Computer Vision</h2><div class="project-subtitle">Machine-vision monitoring module for traditional non-smart gas meters</div></div>
+
+<div class="project-meta"><span class="project-year">2021–2022</span><div class="project-org-main">Shahab Co.</div></div><div class="project-tags-row"><div class="project-tags"><span class="project-tag">Software</span><span class="project-tag">Hardware</span><span class="project-tag">Vision</span></div><div class="project-actions"><a aria-label="GitHub project link" class="project-github" href="https://github.com/ahmad-shabani" rel="noopener" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"></path></svg></a><button aria-label="Show more information" class="project-more" type="button"><span></span><span></span><span></span></button></div></div>
+
+</div>
+<div class="project-detail"><div class="project-detail-inner"><p>Small-sized telemetry and supervised monitoring add-on for traditional gas meters using machine vision and image processing.</p></div></div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<strong>Ahmad Shabani</strong>
+<div class="muted">Hardware &amp; Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
+</div>
+<div>
+<a href="mailto:ahmadsh@kth.se">ahmadsh@kth.se</a> ·
       <a href="https://kth.se/profile/ahmadsh" target="_blank">KTH Profile</a> ·
       <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank">Google Scholar</a>
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-<script src="assets/js/main.js"></script></body></html>
+<script src="assets/js/main.js"></script>
+<script>
+  document.querySelectorAll('.project-more').forEach(function(button) {
+    button.addEventListener('click', function() {
+      button.closest('.project-row').classList.toggle('open');
+    });
+  });
+
+  document.querySelectorAll('.project-filter').forEach(function(button) {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.project-filter').forEach(function(item) { item.classList.remove('active'); });
+      button.classList.add('active');
+      var filter = button.getAttribute('data-filter');
+      document.querySelectorAll('.project-row').forEach(function(row) {
+        var tags = row.getAttribute('data-tags') || '';
+        row.style.display = (filter === 'all' || tags.indexOf(filter) !== -1) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
