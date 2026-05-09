@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Career | Ahmad Shabani</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+
+    .career-hero {
+      padding: 62px 0 34px;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(255, 231, 136, 0.18), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(112, 215, 255, 0.16), transparent 26%),
+        linear-gradient(135deg, var(--hero-a, #18203d), var(--hero-b, #311866) 58%, var(--hero-c, #0b1024));
+      border-bottom: 1px solid var(--border, rgba(255,255,255,0.09));
+    }
+    .career-hero h1 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: clamp(2.25rem, 4vw, 4.25rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+    }
+    .career-hero p {
+      max-width: 860px;
+      margin: 0;
+      color: rgba(238,244,255,0.82);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    body:not(.dark) .career-hero {
+      background: linear-gradient(135deg, #f8faff, #eef3ff 60%, #ffffff);
+    }
+    body:not(.dark) .career-hero h1 { color: #111827; }
+    body:not(.dark) .career-hero p { color: #4b5872; }
+
+    .career-section {
+      padding: 30px 0;
+    }
+    .career-section.compact-top { padding-top: 24px; }
+    .career-section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .career-section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #2c1f00;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      font-size: 0.72rem;
+      font-weight: 950;
+      text-transform: uppercase;
+      letter-spacing: 0.075em;
+    }
+    .career-section-title {
+      margin: 8px 0 0;
+      color: var(--text, #f8fafc);
+      font-size: clamp(1.55rem, 2.3vw, 2.25rem);
+      letter-spacing: -0.045em;
+    }
+    body:not(.dark) .career-section-title { color: #111827; }
+
+    .edu-list {
+      display: grid;
+      gap: 10px;
+    }
+    .edu-row {
+      display: grid;
+      grid-template-columns: 180px 82px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border-radius: 22px;
+      background: var(--card, #fff);
+      border: 1px solid var(--border, rgba(30,41,59,0.12));
+      box-shadow: 0 16px 38px rgba(15,23,42,0.08);
+    }
+    body.dark .edu-row {
+      background: rgba(17,24,39,0.92);
+      border-color: rgba(255,255,255,0.10);
+    }
+    .edu-time {
+      display: grid;
+      gap: 7px;
+      align-content: center;
+    }
+    .career-year {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #111827;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      font-size: 0.72rem;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+    .career-location {
+      display: inline-flex;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--muted, #64748b);
+      background: rgba(125, 215, 255, 0.10);
+      border: 1px solid rgba(125, 215, 255, 0.20);
+      font-size: 0.72rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .edu-emblem {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(30,41,59,0.10);
+      overflow: hidden;
+    }
+    body.dark .edu-emblem { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.10); }
+    .edu-emblem img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+    .career-emblem-fallback {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #174a9e, #5fa8ff);
+      color: #fff;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+    }
+    .edu-content h3 {
+      margin: 0;
+      color: var(--text, #0f172a);
+      font-size: 1.02rem;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+    }
+    body.dark .edu-content h3 { color: #eef4ff; }
+    .career-org-link {
+      display: inline-flex;
+      margin-top: 3px;
+      color: #70d7ff;
+      font-size: 0.86rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    body:not(.dark) .career-org-link { color: #1268a8; }
+    .edu-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 5px;
+    }
+    .career-mini-badge {
+      padding: 5px 8px;
+      border-radius: 999px;
+      color: #c9ffe4;
+      background: rgba(126, 224, 178, 0.14);
+      border: 1px solid rgba(126,224,178,0.30);
+      font-size: 0.68rem;
+      font-weight: 900;
+    }
+    body:not(.dark) .career-mini-badge { color: #0f6b45; background: #e9fff3; border-color: #b7efd0; }
+    .thesis-title {
+      margin: 7px 0 0;
+      color: var(--text, #0f172a);
+      font-size: 0.82rem;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+    body.dark .thesis-title { color: #eaf2ff; }
+    .career-desc {
+      margin: 5px 0 0;
+      color: var(--muted, #64748b);
+      font-size: 0.79rem;
+      line-height: 1.55;
+    }
+    body.dark .career-desc { color: #aebbd4; }
+
+    .career-job-list {
+      display: grid;
+      gap: 7px;
+    }
+    .career-job-row {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr) 180px 36px;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 18px;
+      background: var(--card, #fff);
+      border: 1px solid var(--border, rgba(30,41,59,0.12));
+      box-shadow: 0 10px 26px rgba(15,23,42,0.06);
+      cursor: pointer;
+    }
+    body.dark .career-job-row {
+      background: rgba(17,24,39,0.92);
+      border-color: rgba(255,255,255,0.10);
+    }
+    .job-number {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      color: #111827;
+      font-size: 0.70rem;
+      font-weight: 950;
+    }
+    .job-title-button {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      background: transparent;
+      color: var(--text, #111827);
+      font-size: 0.90rem;
+      font-weight: 950;
+      letter-spacing: -0.015em;
+      text-align: left;
+      cursor: pointer;
+      line-height: 1.25;
+    }
+    body.dark .job-title-button { color: #eef4ff; }
+    .job-company-pill {
+      display: inline-flex;
+      width: fit-content;
+      max-width: 220px;
+      margin-top: 5px;
+      padding: 5px 8px;
+      border-radius: 10px;
+      color: #c9ffe4;
+      background: rgba(126, 224, 178, 0.14);
+      border: 1px solid rgba(126,224,178,0.30);
+      font-size: 0.66rem;
+      font-weight: 900;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    body:not(.dark) .job-company-pill { color: #0f6b45; background: #e9fff3; border-color: #b7efd0; }
+    .job-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 6px;
+    }
+    .job-tags span {
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(125, 215, 255, 0.10);
+      border: 1px solid rgba(125, 215, 255, 0.20);
+      color: var(--muted, #64748b);
+      font-size: 0.62rem;
+      font-weight: 850;
+    }
+    body.dark .job-tags span { color: #cfd9f0; }
+    .job-meta {
+      display: grid;
+      justify-items: end;
+      gap: 6px;
+    }
+    .job-more {
+      width: 32px;
+      height: 32px;
+      border: 0;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      gap: 3px;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      cursor: pointer;
+    }
+    .job-more span {
+      width: 15px;
+      height: 2px;
+      border-radius: 999px;
+      background: #111827;
+      transition: .18s ease;
+    }
+    .career-job-row.open .job-more span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+    .career-job-row.open .job-more span:nth-child(2) { opacity: 0; }
+    .career-job-row.open .job-more span:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+    .job-details {
+      grid-column: 2 / -1;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: .24s ease;
+    }
+    .career-job-row.open .job-details {
+      max-height: 220px;
+      opacity: 1;
+      padding-top: 4px;
+    }
+    .job-details ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted, #64748b);
+      font-size: 0.77rem;
+      line-height: 1.55;
+    }
+    body.dark .job-details ul { color: #aebbd4; }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .award-tile {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 10px;
+      padding: 14px;
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(255, 231, 136, 0.14), transparent 42%),
+        var(--card, #fff);
+      border: 1px solid var(--border, rgba(30,41,59,0.12));
+      box-shadow: 0 12px 28px rgba(15,23,42,0.06);
+    }
+    body.dark .award-tile {
+      background:
+        linear-gradient(135deg, rgba(255, 231, 136, 0.10), transparent 42%),
+        rgba(17,24,39,0.92);
+      border-color: rgba(255,255,255,0.10);
+    }
+    .award-medal {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      color: #111827;
+      font-weight: 950;
+    }
+    .award-year {
+      display: inline-flex;
+      padding: 4px 8px;
+      border-radius: 999px;
+      color: #111827;
+      background: #ffe788;
+      font-size: 0.66rem;
+      font-weight: 950;
+    }
+    .award-body h3 {
+      margin: 7px 0 4px;
+      color: var(--text, #111827);
+      font-size: 0.90rem;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+    }
+    body.dark .award-body h3 { color: #eef4ff; }
+    .award-org {
+      margin: 0 0 5px;
+      color: #70d7ff;
+      font-size: 0.72rem;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+    body:not(.dark) .award-org { color: #1268a8; }
+    .award-desc {
+      margin: 0;
+      color: var(--muted, #64748b);
+      font-size: 0.73rem;
+      line-height: 1.45;
+    }
+    body.dark .award-desc { color: #aebbd4; }
+
+    @media (max-width: 900px) {
+      .edu-row { grid-template-columns: 1fr; }
+      .edu-emblem { width: 64px; height: 64px; }
+      .career-job-row { grid-template-columns: 36px minmax(0, 1fr) 36px; }
+      .job-meta { grid-column: 2 / 3; justify-items: start; display: flex; flex-wrap: wrap; }
+      .job-more { grid-column: 3 / 4; grid-row: 1 / 3; }
+      .job-details { grid-column: 2 / -1; }
+      .awards-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html"><span class="logo">AS</span><span>Ahmad Shabani</span></a>
+    <button class="mobile-menu" data-nav-toggle>Menu</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank">CV</a>
+      <button type="button" data-theme-toggle>◐</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="career-hero">
+    <div class="container">
+      <h1>Career</h1>
+      <p>Education, professional experience, and honors across hardware security, digital systems, embedded Linux, ASIC/FPGA design, and security-aware engineering.</p>
+    </div>
+  </section>
+
+  <section class="section career-section compact-top" id="education">
+    <div class="container">
+      <div class="career-section-head">
+        <div>
+          <span class="career-section-kicker">01 · Education</span>
+          <h2 class="career-section-title">Academic background</h2>
+        </div>
+      </div>
+      <div class="edu-list">
+        
+        <article class="edu-row">
+          <div class="edu-time">
+            <span class="career-year">Nov 2025 – Present</span>
+            <span class="career-location">📍 Stockholm, Sweden</span>
+          </div>
+          <div class="edu-emblem"><img src="assets/img/kth-emblem.png" alt="KTH Royal Institute of Technology emblem"></div>
+          <div class="edu-content">
+            <h3>PostDoc Researcher: Hardware and Computer Security</h3>
+            <a class="career-org-link" href="https://www.kth.se/" target="_blank" rel="noopener">KTH Royal Institute of Technology ↗</a>
+            <div class="edu-badges"></div>
+            <p class="thesis-title">Research focus: improving the security of modern computer processors and GPUs.</p>
+            <p class="career-desc">The research studies hidden vulnerabilities in complex processors, including microarchitectural behavior and security-observable side effects that can be exploited to leak confidential data.</p>
+          </div>
+        </article>
+    
+        <article class="edu-row">
+          <div class="edu-time">
+            <span class="career-year">Apr 2016 – Aug 2021</span>
+            <span class="career-location">📍 Tehran, Iran</span>
+          </div>
+          <div class="edu-emblem"><img src="assets/img/ut-emblem.png" alt="University of Tehran emblem"></div>
+          <div class="edu-content">
+            <h3>Ph.D.: Digital Electronic Systems</h3>
+            <a class="career-org-link" href="https://ut.ac.ir/" target="_blank" rel="noopener">University of Tehran ↗</a>
+            <div class="edu-badges"><span class="career-mini-badge">GPA: 18.02 / 20</span></div>
+            <p class="thesis-title">Ph.D. Dissertation: Hardware Trojan Detection Approaches Using Design for Hardware Trust</p>
+            <p class="career-desc">Designed efficient Design-for-Hardware-Trust methodologies to detect hardware Trojans mounted by untrusted foundries. Dissertation score: Excellent.</p>
+          </div>
+        </article>
+    
+        <article class="edu-row">
+          <div class="edu-time">
+            <span class="career-year">2014 – 2016</span>
+            <span class="career-location">📍 Tehran, Iran</span>
+          </div>
+          <div class="edu-emblem"><span class="career-emblem-fallback">SBU</span></div>
+          <div class="edu-content">
+            <h3>MSc: Digital Electronic Systems</h3>
+            <a class="career-org-link" href="https://en.sbu.ac.ir/" target="_blank" rel="noopener">Shahid Beheshti University ↗</a>
+            <div class="edu-badges"><span class="career-mini-badge">GPA: 19.37 / 20</span></div>
+            <p class="thesis-title">MSc Dissertation: Design and Implementation of Low-Power Discrete Cosine Transform Using CORDIC Algorithm</p>
+            <p class="career-desc">Designed and implemented a low-power DCT architecture based on the CORDIC algorithm for Wireless Capsule Endoscopy and HEVC compression engines. Dissertation score: Excellent.</p>
+          </div>
+        </article>
+    
+      </div>
+    </div>
+  </section>
+
+  <section class="section career-section" id="experience">
+    <div class="container">
+      <div class="career-section-head">
+        <div>
+          <span class="career-section-kicker">02 · Experience</span>
+          <h2 class="career-section-title">Professional experience</h2>
+        </div>
+      </div>
+      <div class="career-job-list">
+        
+        <article class="career-job-row" data-career-row>
+          <div class="job-number">01</div>
+          <div class="job-main">
+            <button class="job-title-button" type="button" data-career-toggle>Assistant Professor (on Sabbatical Leave)</button>
+            <a class="job-company-pill" href="https://aut.ac.ir/en" target="_blank" rel="noopener" title="Amirkabir University of Technology">AUT ↗</a>
+            <div class="job-tags"><span>Faculty</span><span>Teaching</span><span>Computer Engineering</span></div>
+          </div>
+          <div class="job-meta">
+            <span class="career-year">Dec 2024 – Present</span>
+            <span class="career-location">📍 Tehran, Iran</span>
+          </div>
+          <button class="job-more" type="button" aria-label="Show experience details" data-career-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="job-details">
+            <ul><li>Faculty member teaching Computer Architecture, Introduction of Logic Design, Cyber-Physical Systems, and Digital System Design Automation using VHDL.</li></ul>
+          </div>
+        </article>
+    
+        <article class="career-job-row" data-career-row>
+          <div class="job-number">02</div>
+          <div class="job-main">
+            <button class="job-title-button" type="button" data-career-toggle>Embedded Linux Software Developer (Part-time)</button>
+            <a class="job-company-pill" href="https://www.crouse.ir/" target="_blank" rel="noopener" title="CROUSE PJS Co.">CROUSE ↗</a>
+            <div class="job-tags"><span>Embedded Linux</span><span>FPGA</span><span>Drivers</span><span>PetaLinux</span></div>
+          </div>
+          <div class="job-meta">
+            <span class="career-year">Dec 2023 – Oct 2025</span>
+            <span class="career-location">📍 Tehran, Iran</span>
+          </div>
+          <button class="job-more" type="button" aria-label="Show experience details" data-career-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="job-details">
+            <ul><li>FPGA-based embedded system design for validation and test.</li><li>Custom PetaLinux build for Zynq-7000 SoCs and PYNQ integration.</li><li>Linux driver development for general and custom Xilinx IP cores.</li><li>Hardware/software co-design and system integration.</li></ul>
+          </div>
+        </article>
+    
+        <article class="career-job-row" data-career-row>
+          <div class="job-number">03</div>
+          <div class="job-main">
+            <button class="job-title-button" type="button" data-career-toggle>Automotive Engineer (Project-Based)</button>
+            <a class="job-company-pill" href="https://www.electro-idea.com/" target="_blank" rel="noopener" title="Azin Electro Idea">Azin Electro ↗</a>
+            <div class="job-tags"><span>Automotive</span><span>Security</span><span>PEPS</span><span>DPA</span></div>
+          </div>
+          <div class="job-meta">
+            <span class="career-year">Apr 2023 – Dec 2023</span>
+            <span class="career-location">📍 Tehran, Iran</span>
+          </div>
+          <button class="job-more" type="button" aria-label="Show experience details" data-career-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="job-details">
+            <ul><li>Worked on communication protocols and security measures in Passive-Entry Passive-Start systems.</li><li>Worked on DPA analysis for breaking the KeeLoQ protocol available in key-fobs.</li></ul>
+          </div>
+        </article>
+    
+        <article class="career-job-row" data-career-row>
+          <div class="job-number">04</div>
+          <div class="job-main">
+            <button class="job-title-button" type="button" data-career-toggle>Digital ASIC Designer</button>
+            <a class="job-company-pill" href="#" title="Mana Excellence Center">Mana ↗</a>
+            <div class="job-tags"><span>ASIC</span><span>VLSI</span><span>STA</span><span>Physical Design</span></div>
+          </div>
+          <div class="job-meta">
+            <span class="career-year">Mar 2021 – Apr 2023</span>
+            <span class="career-location">📍 Tehran, Iran</span>
+          </div>
+          <button class="job-more" type="button" aria-label="Show experience details" data-career-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="job-details">
+            <ul><li>Managed digital ASIC design of automotive-graded ICs.</li><li>Participated in synthesis, simulation, LEC, coverage estimation, and static timing analysis.</li><li>Participated in physical design including partitioning, floorplanning, power planning, placement, CTS, and routing.</li></ul>
+          </div>
+        </article>
+    
+        <article class="career-job-row" data-career-row>
+          <div class="job-number">05</div>
+          <div class="job-main">
+            <button class="job-title-button" type="button" data-career-toggle>CTO &amp; Technical Consultant</button>
+            <a class="job-company-pill" href="https://www.shahab-sg.ir/" target="_blank" rel="noopener" title="Shahab Co.">Shahab ↗</a>
+            <div class="job-tags"><span>IoT</span><span>Firmware</span><span>Hardware</span><span>Computer Vision</span></div>
+          </div>
+          <div class="job-meta">
+            <span class="career-year">2020 – Oct 2025</span>
+            <span class="career-location">📍 Tehran, Iran</span>
+          </div>
+          <button class="job-more" type="button" aria-label="Show experience details" data-career-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="job-details">
+            <ul><li>Head of the electronic department.</li><li>Designed non-destructive and low-cost smart electricity meters based on IoT, including hardware and firmware.</li><li>Developed small-sized hardware/firmware devices for monitoring non-smart gas meters using computer vision and image processing.</li></ul>
+          </div>
+        </article>
+    
+      </div>
+    </div>
+  </section>
+
+  <section class="section career-section" id="awards">
+    <div class="container">
+      <div class="career-section-head">
+        <div>
+          <span class="career-section-kicker">03 · Honors</span>
+          <h2 class="career-section-title">Awards & recognition</h2>
+        </div>
+      </div>
+      <div class="awards-grid">
+        
+        <article class="award-tile">
+          <div class="award-medal">★</div>
+          <div class="award-body">
+            <span class="award-year">2022</span>
+            <h3>Prestigious Award for Outstanding Ph.D. Dissertation</h3>
+            <p class="award-org">19th International ISC Conference on Information Security and Cryptography (ISCISC2022)</p>
+            <p class="award-desc">Recognized for the Ph.D. dissertation on hardware Trojan detection and Design for Hardware Trust.</p>
+          </div>
+        </article>
+    
+        <article class="award-tile">
+          <div class="award-medal">★</div>
+          <div class="award-body">
+            <span class="award-year">2016</span>
+            <h3>Ranked 1st Among Graduate Students in Master&#x27;s Degree Program</h3>
+            <p class="award-org">Shahid Beheshti University</p>
+            <p class="award-desc">Ranked first in the Digital Electronic Systems master&#x27;s program.</p>
+          </div>
+        </article>
+    
+        <article class="award-tile">
+          <div class="award-medal">★</div>
+          <div class="award-body">
+            <span class="award-year">2017–2018</span>
+            <h3>Student Prize from Iran&#x27;s National Elites Foundation</h3>
+            <p class="award-org">Iran&#x27;s National Elites Foundation</p>
+            <p class="award-desc">Recipient of student prize for two successive years.</p>
+          </div>
+        </article>
+    
+        <article class="award-tile">
+          <div class="award-medal">★</div>
+          <div class="award-body">
+            <span class="award-year">2016</span>
+            <h3>Admitted to Ph.D. Program with Exceptional Merit</h3>
+            <p class="award-org">University of Tehran</p>
+            <p class="award-desc">Entrance exam requirement waived by the Organization for Development of Exceptional Talents.</p>
+          </div>
+        </article>
+    
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Ahmad Shabani</strong>
+      <div class="muted">Hardware & Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
+    </div>
+    <div>
+      <a href="mailto:ahmadsh@kth.se">ahmadsh@kth.se</a> ·
+      <a href="https://kth.se/profile/ahmadsh" target="_blank">KTH Profile</a> ·
+      <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank">Google Scholar</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script>
+  document.querySelectorAll('[data-career-row]').forEach((row) => {
+    row.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      row.classList.toggle('open');
+    });
+  });
+  document.querySelectorAll('[data-career-toggle]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      button.closest('[data-career-row]').classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
