@@ -210,13 +210,13 @@
     /* Compact research materials section */
     .research-materials {
       margin: 0 0 16px;
-      padding: 14px;
+      padding: 16px;
       border: 1px solid rgba(255, 232, 140, .22);
       border-radius: 24px;
       background:
-        radial-gradient(circle at 12% 0%, rgba(255, 232, 140, .13), transparent 32%),
-        radial-gradient(circle at 92% 18%, rgba(112, 215, 255, .12), transparent 30%),
-        linear-gradient(135deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+        radial-gradient(circle at 10% 0%, rgba(255, 232, 140, .17), transparent 34%),
+        radial-gradient(circle at 92% 18%, rgba(112, 215, 255, .14), transparent 30%),
+        linear-gradient(135deg, rgba(255,255,255,.075), rgba(255,255,255,.022));
       box-shadow: 0 18px 42px rgba(0,0,0,.16);
     }
 
@@ -225,13 +225,13 @@
       justify-content: space-between;
       align-items: flex-end;
       gap: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .research-materials-title {
       margin: 0;
       color: var(--pg-text);
-      font-size: 1.1rem;
+      font-size: 1.12rem;
       line-height: 1.2;
       letter-spacing: -.025em;
     }
@@ -257,17 +257,27 @@
     .research-material-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
+      gap: 10px;
     }
 
     .research-material-card {
       position: relative;
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 12px;
       min-width: 0;
       padding: 12px;
       border: 1px solid var(--pg-border);
       border-radius: 18px;
-      background: rgba(10, 16, 34, .52);
+      background: rgba(10, 16, 34, .58);
       overflow: hidden;
+      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+
+    .research-material-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,232,140,.38);
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
     }
 
     .research-material-card::before {
@@ -279,12 +289,44 @@
       opacity: .95;
     }
 
+    .research-material-card.palette-pmtp { background: linear-gradient(135deg, rgba(255,232,140,.10), rgba(112,215,255,.04) 50%, rgba(10,16,34,.92)); }
+    .research-material-card.palette-podem { background: linear-gradient(135deg, rgba(126,224,178,.12), rgba(112,215,255,.05) 48%, rgba(10,16,34,.92)); }
+    .research-material-card.palette-scs { background: linear-gradient(135deg, rgba(141,92,246,.12), rgba(255,232,140,.06) 52%, rgba(10,16,34,.92)); }
+
+    .research-material-visual {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 2px;
+    }
+
+    .research-material-icon-frame {
+      width: 62px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7, 12, 24, .42);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+      overflow: hidden;
+    }
+
+    .research-material-icon-frame img {
+      width: 54px;
+      height: 54px;
+      display: block;
+    }
+
+    .research-material-body { min-width: 0; }
+
     .research-material-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 7px;
+      margin-bottom: 6px;
     }
 
     .research-material-code {
@@ -298,9 +340,9 @@
     .research-material-year {
       padding: 4px 8px;
       border-radius: 999px;
-      background: rgba(255,255,255,.075);
-      color: #dfe8fb;
-      border: 1px solid rgba(255,255,255,.11);
+      background: rgba(255,255,255,.11);
+      color: #eef4ff;
+      border: 1px solid rgba(255,255,255,.12);
       font-size: .67rem;
       font-weight: 850;
       white-space: nowrap;
@@ -309,8 +351,8 @@
     .research-material-card h3 {
       margin: 0 0 6px;
       color: var(--pg-text);
-      font-size: .92rem;
-      line-height: 1.28;
+      font-size: .91rem;
+      line-height: 1.26;
       letter-spacing: -.015em;
     }
 
@@ -318,7 +360,7 @@
       margin: 0 0 9px;
       color: var(--pg-muted);
       font-size: .76rem;
-      line-height: 1.52;
+      line-height: 1.5;
     }
 
     .research-material-tags {
@@ -331,9 +373,9 @@
     .research-material-tags span {
       padding: 4px 7px;
       border-radius: 999px;
-      color: #cfdbf3;
-      border: 1px solid rgba(255,255,255,.1);
-      background: rgba(255,255,255,.045);
+      color: #d4dff4;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.055);
       font-size: .63rem;
       font-weight: 850;
       white-space: nowrap;
@@ -355,10 +397,10 @@
       color: var(--pg-text);
       text-decoration: none;
       border: 1px solid rgba(255,255,255,.13);
-      background: rgba(255,255,255,.045);
+      background: rgba(255,255,255,.055);
       font-size: .7rem;
       font-weight: 900;
-      transition: transform .16s ease, border-color .16s ease, background .16s ease;
+      transition: transform .16s ease, border-color .16s ease, background .16s ease, color .16s ease;
     }
 
     .material-link:hover {
@@ -367,10 +409,35 @@
       background: rgba(255,232,140,.10);
     }
 
+    .material-link.github-link {
+      color: #11172a;
+      background: linear-gradient(135deg, #ffef9f, #ffd463);
+      border-color: rgba(255,232,140,.8);
+    }
+
+    .material-link.github-link:hover {
+      color: #11172a;
+      background: linear-gradient(135deg, #fff2ae, #ffcf52);
+      border-color: rgba(255,232,140,.95);
+    }
+
     .material-link svg {
       width: 13px;
       height: 13px;
       fill: currentColor;
+    }
+
+    .project-github {
+      color: #10172b;
+      background: linear-gradient(135deg, #ffef9f, #ffd463);
+      border-color: rgba(255,232,140,.8);
+    }
+
+    .project-github:hover {
+      color: #10172b;
+      border-color: rgba(255,232,140,.95);
+      background: linear-gradient(135deg, #fff2ae, #ffcf52);
+      transform: translateY(-1px);
     }
 
     @media (max-width: 980px) {
@@ -403,7 +470,7 @@
       <a href="education.html">Education</a>
       <a href="experience.html">Experience</a>
       <a href="teaching.html">Teaching</a>
-      <a href="projects.html">Projects</a>
+      <a class="active" href="projects.html">Projects</a>
       <a href="awards.html">Awards</a>
       <a href="contact.html">Contact</a>
       <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank">CV</a>
@@ -428,63 +495,84 @@
         <div class="research-materials-head">
           <div>
             <h2 class="research-materials-title" id="research-materials-title">Research projects & materials</h2>
-            <p class="research-materials-subtitle">Paper-linked repositories with source code, examples, scripts, and reproducibility material.</p>
+            <p class="research-materials-subtitle">Paper-linked repositories with source code, reproducibility material, scripts, and supporting artifacts.</p>
           </div>
           <span class="research-materials-note">Code + paper material</span>
         </div>
 
         <div class="research-material-grid">
-          <article class="research-material-card">
-            <div class="research-material-top">
-              <span class="research-material-code">PMTP</span>
-              <span class="research-material-year">TCAD · 2020</span>
+          <article class="research-material-card palette-pmtp">
+            <div class="research-material-visual">
+              <div class="research-material-icon-frame">
+                <img src="assets/img/pmtp-icon.svg" alt="PMTP project icon">
+              </div>
             </div>
-            <h3>MAX-SAT-Based Hardware Trojan Detection Flow</h3>
-            <p>Design-for-trust flow that identifies low-transition-probability nets and uses MAX-SAT-guided test-point insertion to improve Trojan activation and observation.</p>
-            <div class="research-material-tags"><span>Hardware Security</span><span>MAX-SAT</span><span>Verilog</span><span>Perl</span></div>
-            <div class="research-material-links">
-              <a class="material-link" href="https://github.com/ahmad-shabani/PMTP" target="_blank" rel="noopener" aria-label="Open PMTP GitHub repository">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-                GitHub
-              </a>
-              <a class="material-link" href="papers/pmtp-max-sat-hardware-trojan.pdf" target="_blank" rel="noopener">Paper</a>
-              <a class="material-link" href="https://doi.org/10.1109/TCAD.2018.2889663" target="_blank" rel="noopener">DOI</a>
-            </div>
-          </article>
-
-          <article class="research-material-card">
-            <div class="research-material-top">
-              <span class="research-material-code">PODEM</span>
-              <span class="research-material-year">JNCA · 2020</span>
-            </div>
-            <h3>Property-Based Design Modification for IoT Devices</h3>
-            <p>Low-cost DfTr prototype for resource-constrained IoT circuits using transition extraction, CNF/WCNF generation, Open-WBO optimization, and secure-design generation.</p>
-            <div class="research-material-tags"><span>Hardware Security</span><span>IoT</span><span>EDA</span><span>Perl</span></div>
-            <div class="research-material-links">
-              <a class="material-link" href="https://github.com/ahmad-shabani/PODEM" target="_blank" rel="noopener" aria-label="Open PODEM GitHub repository">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-                GitHub
-              </a>
-              <a class="material-link" href="papers/podem-low-cost-design-modification.pdf" target="_blank" rel="noopener">Paper</a>
-              <a class="material-link" href="https://doi.org/10.1016/j.jnca.2020.102713" target="_blank" rel="noopener">DOI</a>
+            <div class="research-material-body">
+              <div class="research-material-top">
+                <span class="research-material-code">PMTP</span>
+                <span class="research-material-year">TCAD · 2020</span>
+              </div>
+              <h3>MAX-SAT-Based Hardware Trojan Detection Flow</h3>
+              <p>Identifies low-transition-probability nets and inserts design-for-trust logic so rare Trojan-triggering conditions become easier to activate and observe.</p>
+              <div class="research-material-tags"><span>Hardware Security</span><span>MAX-SAT</span><span>Verilog</span><span>Perl</span></div>
+              <div class="research-material-links">
+                <a class="material-link github-link" href="https://github.com/ahmad-shabani/PMTP" target="_blank" rel="noopener" aria-label="Open PMTP GitHub repository">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+                  GitHub
+                </a>
+                <a class="material-link" href="papers/pmtp-max-sat-hardware-trojan.pdf" target="_blank" rel="noopener">Paper</a>
+                <a class="material-link" href="https://doi.org/10.1109/TCAD.2018.2889663" target="_blank" rel="noopener">DOI</a>
+              </div>
             </div>
           </article>
 
-          <article class="research-material-card">
-            <div class="research-material-top">
-              <span class="research-material-code">SCS</span>
-              <span class="research-material-year">TCAS-II · 2021</span>
+          <article class="research-material-card palette-podem">
+            <div class="research-material-visual">
+              <div class="research-material-icon-frame">
+                <img src="assets/img/podem-icon.svg" alt="PODEM project icon">
+              </div>
             </div>
-            <h3>Partition-Based Test-Pattern Shuffling Scheme</h3>
-            <p>Transition-aware test-pattern generation and partition-based shuffling flow for strengthening side-channel-based Hardware Trojan detection sensitivity.</p>
-            <div class="research-material-tags"><span>Hardware Security</span><span>Side Channel</span><span>Test Patterns</span><span>EDA</span></div>
-            <div class="research-material-links">
-              <a class="material-link" href="https://github.com/ahmad-shabani/TestGen-TrojanDetect" target="_blank" rel="noopener" aria-label="Open SCS GitHub repository">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-                GitHub
-              </a>
-              <a class="material-link" href="papers/partition-based-shuffling-hardware-trojan.pdf" target="_blank" rel="noopener">Paper</a>
-              <a class="material-link" href="https://doi.org/10.1109/TCSII.2020.3001263" target="_blank" rel="noopener">DOI</a>
+            <div class="research-material-body">
+              <div class="research-material-top">
+                <span class="research-material-code">PODEM</span>
+                <span class="research-material-year">JNCA · 2020</span>
+              </div>
+              <h3>Property-Based Design Modification for IoT Devices</h3>
+              <p>Low-cost DfTr prototype for resource-constrained IoT circuits using transition extraction, CNF/WCNF generation, Partial Max-SAT optimization, and secure-design generation.</p>
+              <div class="research-material-tags"><span>Hardware Security</span><span>IoT</span><span>EDA</span><span>Perl</span></div>
+              <div class="research-material-links">
+                <a class="material-link github-link" href="https://github.com/ahmad-shabani/PODEM" target="_blank" rel="noopener" aria-label="Open PODEM GitHub repository">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+                  GitHub
+                </a>
+                <a class="material-link" href="papers/podem-low-cost-design-modification.pdf" target="_blank" rel="noopener">Paper</a>
+                <a class="material-link" href="https://doi.org/10.1016/j.jnca.2020.102713" target="_blank" rel="noopener">DOI</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="research-material-card palette-scs">
+            <div class="research-material-visual">
+              <div class="research-material-icon-frame">
+                <img src="assets/img/scs-icon.svg" alt="SCS project icon">
+              </div>
+            </div>
+            <div class="research-material-body">
+              <div class="research-material-top">
+                <span class="research-material-code">SCS</span>
+                <span class="research-material-year">TCAS-II · 2021</span>
+              </div>
+              <h3>Partition-Based Test-Pattern Shuffling Scheme</h3>
+              <p>Transition-aware test-pattern generation and partition-based shuffling flow for strengthening side-channel-based Hardware Trojan detection sensitivity.</p>
+              <div class="research-material-tags"><span>Hardware Security</span><span>Side Channel</span><span>Test Patterns</span><span>EDA</span></div>
+              <div class="research-material-links">
+                <a class="material-link github-link" href="https://github.com/ahmad-shabani/TestGen-TrojanDetect" target="_blank" rel="noopener" aria-label="Open SCS GitHub repository">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.42-4.04-1.42-.55-1.38-1.34-1.75-1.34-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.92 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.62-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+                  GitHub
+                </a>
+                <a class="material-link" href="papers/partition-based-shuffling-hardware-trojan.pdf" target="_blank" rel="noopener">Paper</a>
+                <a class="material-link" href="https://doi.org/10.1109/TCSII.2020.3001263" target="_blank" rel="noopener">DOI</a>
+              </div>
             </div>
           </article>
         </div>
