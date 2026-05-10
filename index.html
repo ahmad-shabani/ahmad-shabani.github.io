@@ -22,7 +22,7 @@
 
     .home-hero-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 265px;
+      grid-template-columns: minmax(0, 1fr) 345px;
       gap: 34px;
       align-items: center;
     }
@@ -94,7 +94,7 @@
 
     .home-photo-card {
       justify-self: end;
-      width: 245px;
+      width: 330px;
       padding: 12px;
       border-radius: 28px;
       background:
@@ -135,9 +135,95 @@
 
     body:not(.dark) .home-photo-caption { color: #5f6b80; }
 
-    .home-nav-strip {
-      padding: 14px 0 0;
+
+
+    .home-bio-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(260px, .7fr);
+      gap: 18px;
+      align-items: stretch;
+      padding: 20px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 231, 136, 0.14), transparent 34%),
+        linear-gradient(135deg, rgba(125, 215, 255, 0.08), transparent 46%),
+        var(--card, #ffffff);
+      border: 1px solid var(--border, rgba(30,41,59,0.12));
+      box-shadow: 0 14px 32px rgba(15,23,42,0.07);
     }
+
+    body.dark .home-bio-card {
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 231, 136, 0.10), transparent 34%),
+        linear-gradient(135deg, rgba(125, 215, 255, 0.08), transparent 46%),
+        rgba(17,24,39,0.92);
+      border-color: rgba(255,255,255,0.10);
+    }
+
+    .home-bio-card h2 {
+      margin: 0 0 8px;
+      color: var(--text, #111827);
+      font-size: clamp(1.35rem, 2vw, 1.85rem);
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+    }
+
+    body.dark .home-bio-card h2 { color: #eef4ff; }
+
+    .home-bio-card p {
+      margin: 0 0 10px;
+      color: var(--muted, #64748b);
+      font-size: 0.88rem;
+      line-height: 1.72;
+    }
+
+    body.dark .home-bio-card p { color: #aebbd4; }
+
+    .home-bio-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px;
+      border-radius: 22px;
+      background: rgba(125, 215, 255, 0.08);
+      border: 1px solid rgba(125, 215, 255, 0.18);
+    }
+
+    .home-bio-side strong {
+      color: var(--text, #111827);
+      font-size: .92rem;
+      line-height: 1.35;
+    }
+
+    body.dark .home-bio-side strong { color: #eef4ff; }
+
+    .home-bio-side span {
+      color: var(--muted, #64748b);
+      font-size: .76rem;
+      line-height: 1.45;
+    }
+
+    body.dark .home-bio-side span { color: #aebbd4; }
+
+    .home-bio-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .research-icon svg {
+      width: 19px;
+      height: 19px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .home-nav-strip { display: none; }
 
     .home-strip {
       display: flex;
@@ -408,7 +494,7 @@
       }
       .home-photo-card {
         justify-self: start;
-        width: 220px;
+        width: 280px;
       }
     }
 
@@ -418,10 +504,12 @@
       .research-interest-grid,
       .home-overview-grid,
       .home-contact-mini { grid-template-columns: 1fr; }
+      .home-bio-card,
       .home-section-head {
         align-items: flex-start;
         flex-direction: column;
       }
+      .home-bio-card { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -475,9 +563,45 @@
     </div>
   </section>
 
+  <section class="home-section" id="bio">
+    <div class="container">
+      <div class="home-bio-card">
+        <div>
+          <span class="career-section-kicker">01 · Bio</span>
+          <h2>Biography</h2>
+          <p>
+            I am a postdoctoral researcher at KTH Royal Institute of Technology working in hardware and computer security.
+            My research connects GPU and processor security, microarchitectural side channels, Hardware Trojan detection,
+            PUF-based authentication, and secure digital system design.
+          </p>
+          <p>
+            Before joining KTH, I served as an Assistant Professor at Amirkabir University of Technology and worked on
+            digital ASIC design, embedded systems, FPGA-based platforms, and security-aware engineering projects.
+          </p>
+          <div class="home-bio-actions">
+            <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn" href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+        </div>
+        <aside class="home-bio-side">
+          <div>
+            <strong>Research focus</strong><br>
+            <span>Security across hardware, microarchitecture, digital circuits, embedded software, and implementation-level behavior.</span>
+          </div>
+          <div>
+            <strong>Current affiliation</strong><br>
+            <span>KTH Royal Institute of Technology, Stockholm, Sweden</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+
   <section class="home-nav-strip">
     <div class="container">
       <div class="home-strip" aria-label="Home page sections">
+        <a href="#bio">Bio</a>
         <a href="#research-interests">Research</a>
         <a href="#site-overview">Career</a>
         <a href="#site-overview">Teaching</a>
@@ -492,7 +616,7 @@
     <div class="container">
       <div class="home-section-head">
         <div>
-          <span class="career-section-kicker">01 · Research interests</span>
+          <span class="career-section-kicker">02 · Research interests</span>
           <h2 class="home-section-title">Core research areas</h2>
         </div>
         <a class="btn ghost" href="publications.html">View publications</a>
@@ -500,31 +624,31 @@
 
       <div class="research-interest-grid">
         <article class="research-interest-card">
-          <div class="research-icon">🛡</div>
+          <div class="research-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"/><path d="M9.2 12l1.8 1.8 4-4"/></svg></div>
           <h3>Hardware Trojans & Security</h3>
           <p>Detection and countermeasure methods for malicious modifications in integrated circuits.</p>
         </article>
 
         <article class="research-interest-card">
-          <div class="research-icon">🔐</div>
+          <div class="research-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg></div>
           <h3>PUF-Based Authentication</h3>
           <p>Lightweight protocols and hardware primitives for secure identification.</p>
         </article>
 
         <article class="research-interest-card">
-          <div class="research-icon">⚙</div>
+          <div class="research-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></div>
           <h3>Design for Hardware Trust</h3>
           <p>Design-time analysis and modification flows for trust verification.</p>
         </article>
 
         <article class="research-interest-card">
-          <div class="research-icon">◌</div>
+          <div class="research-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z"/></svg></div>
           <h3>Low-Power VLSI Design</h3>
           <p>Efficient digital design and low-power architectures for embedded systems.</p>
         </article>
 
         <article class="research-interest-card">
-          <div class="research-icon">µ</div>
+          <div class="research-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
           <h3>Transient Microarchitectural Attacks</h3>
           <p>Security-observable behavior in processors and GPUs, including timing, scheduling, and memory effects.</p>
         </article>
@@ -536,7 +660,7 @@
     <div class="container">
       <div class="home-section-head">
         <div>
-          <span class="career-section-kicker">02 · Website</span>
+          <span class="career-section-kicker">03 · Website</span>
           <h2 class="home-section-title">Explore my profile</h2>
         </div>
       </div>
@@ -585,7 +709,7 @@
     <div class="container">
       <div class="home-contact-mini">
         <div>
-          <span class="career-section-kicker">03 · Contact</span>
+          <span class="career-section-kicker">04 · Contact</span>
           <h2>Contact</h2>
           <p>KTH Royal Institute of Technology, Stockholm, Sweden.</p>
         </div>
