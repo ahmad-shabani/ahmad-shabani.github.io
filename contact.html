@@ -547,9 +547,7 @@
       <div class="container">
         <span class="contact-compact-kicker">Get in touch</span>
         <h1>Contact</h1>
-        <p>
-          Research, teaching, collaboration, reviewing, and academic/industrial security discussions.
-        </p>
+        <p>Academic contact, collaboration, and research discussion.</p>
       </div>
     </section>
 
@@ -562,7 +560,7 @@
                 <h2 class="contact-section-title">Contact details</h2>
 
                 <div class="contact-list-compact">
-                  <a class="contact-item-compact" href="mailto:ahmadsh@kth.se">
+                  <div class="contact-item-compact" role="group" aria-label="Email address is written in protected format">
                     <span class="contact-icon">
                       <svg viewBox="0 0 24 24" aria-hidden="true">
                         <rect x="3" y="5" width="18" height="14" rx="2"></rect>
@@ -571,9 +569,9 @@
                     </span>
                     <span>
                       <span class="contact-label">Email</span>
-                      <span class="contact-value">ahmadsh@kth.se</span>
+                      <span class="contact-value">ahmadsh [at] kth [dot] se</span>
                     </span>
-                  </a>
+                  </div>
 
                   <a class="contact-item-compact" href="https://kth.se/profile/ahmadsh" target="_blank" rel="noopener">
                     <span class="contact-icon blue">
@@ -623,63 +621,24 @@
 
                 <div class="contact-actions-row">
                   <a class="contact-button-compact" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-                  <a class="contact-button-compact secondary" href="https://maps.google.com/?q=Teknikringen%2033%2C%20SE-100%2044%20Stockholm%2C%20Sweden" target="_blank" rel="noopener">Open map</a>
+                  <a class="contact-button-compact secondary" href="https://maps.google.com/?q=KTH%20Royal%20Institute%20of%20Technology%20Stockholm%20Sweden" target="_blank" rel="noopener">Open map</a>
                 </div>
               </div>
             </section>
-
-            <section class="contact-panel research-interest-panel">
-              <div class="contact-panel-inner">
-                <div class="research-interest-head">
-                  <span class="research-interest-main-icon" aria-hidden="true">▣</span>
-                  <span class="research-interest-title-wrap">
-                    <h2>Research interests</h2>
-                    <p>Hardware security, trustworthy systems, and implementation-aware design.</p>
-                  </span>
-                </div>
-
-                <div class="research-interest-grid">
-                  <div class="research-interest-item">
-                    <span class="research-interest-icon gold" aria-hidden="true">🛡</span>
-                    <span class="research-interest-text">Hardware Trojans & Security</span>
-                  </div>
-
-                  <div class="research-interest-item">
-                    <span class="research-interest-icon green" aria-hidden="true">🔐</span>
-                    <span class="research-interest-text">PUF-Based Authentication</span>
-                  </div>
-
-                  <div class="research-interest-item">
-                    <span class="research-interest-icon purple" aria-hidden="true">▦</span>
-                    <span class="research-interest-text">Design for Hardware Trust</span>
-                  </div>
-
-                  <div class="research-interest-item">
-                    <span class="research-interest-icon" aria-hidden="true">⚡</span>
-                    <span class="research-interest-text">Low-Power VLSI Design</span>
-                  </div>
-
-                  <div class="research-interest-item">
-                    <span class="research-interest-icon gold" aria-hidden="true">◉</span>
-                    <span class="research-interest-text">Transient Microarchitectural Attacks</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </aside>
+</aside>
 
           <section class="contact-panel">
             <div class="address-card-compact">
               <h2 class="contact-section-title">Office location</h2>
-              <p class="address-line">Teknikringen 33, floor 3</p>
-              <p class="address-muted">SE-100 44 Stockholm, Sweden</p>
+              <p class="address-line">KTH Royal Institute of Technology</p>
+              <p class="address-muted">Stockholm, Sweden</p>
             </div>
-            <div class="map-frame-compact" aria-label="Map showing Teknikringen 33, Stockholm">
+            <div class="map-frame-compact" aria-label="Map showing KTH Royal Institute of Technology, Stockholm">
               <iframe
-                title="Map to Teknikringen 33, Stockholm"
+                title="Map to KTH Royal Institute of Technology, Stockholm"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Teknikringen%2033%2C%20SE-100%2044%20Stockholm%2C%20Sweden&output=embed">
+                src="https://www.google.com/maps?q=KTH%20Royal%20Institute%20of%20Technology%20Stockholm%20Sweden&output=embed">
               </iframe>
             </div>
           </section>
@@ -692,12 +651,13 @@
   <div class="container footer-grid">
     <div>
       <strong>Ahmad Shabani</strong>
-      <div class="muted">Hardware & Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
+      <div class="muted">Hardware &amp; Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
     </div>
-    <div>
-      <a href="mailto:ahmadsh@kth.se">ahmadsh@kth.se</a> ·
-      <a href="https://kth.se/profile/ahmadsh" target="_blank">KTH Profile</a> ·
-      <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank">Google Scholar</a>
+    <div class="footer-links">
+      <span class="email-obfuscated">ahmadsh [at] kth [dot] se</span> ·
+      <a href="https://kth.se/profile/ahmadsh" target="_blank" rel="noopener">KTH Profile</a> ·
+      <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <div class="copyright">© <span data-current-year>2026</span> Ahmad Shabani. All rights reserved.</div>
     </div>
   </div>
 </footer>

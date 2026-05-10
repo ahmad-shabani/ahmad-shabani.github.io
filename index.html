@@ -5,19 +5,6 @@
   <title>Ahmad Shabani | Hardware & Computer Security Researcher</title>
   <meta name="description" content="Personal academic website of Ahmad Shabani, researcher in hardware security, computer security, digital ASIC design, Hardware Trojans, PUFs, and GPU microarchitectural security.">
   <link rel="stylesheet" href="assets/css/style.css">
-<style>
-}
-
-    /* Safety: keep menu visible while scrolling */
-    .topbar {
-      position: sticky !important;
-      top: 0 !important;
-      z-index: 9999 !important;
-      backdrop-filter: blur(18px) !important;
-      -webkit-backdrop-filter: blur(18px) !important;
-    }
-
-  </style>
 </head>
 <body>
 <header class="topbar">
@@ -37,70 +24,107 @@
   </div>
 </header>
 <main>
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">Hardware Security · Computer Security · Digital ASIC Design</div>
-      <h1>Ahmad <span>Shabani</span></h1>
-      <p class="lead">Postdoctoral researcher at KTH Royal Institute of Technology working across hardware security, microarchitectural leakage, GPU security, Hardware Trojan detection, and trustworthy digital systems.</p>
-      <div class="hero-actions">
-        <a class="btn gold" href="research.html">Explore Research</a>
-        <a class="btn" href="files/Ahmad_Shabani_CV.pdf" target="_blank">Download CV</a>
-        <a class="btn ghost" href="contact.html">Contact</a>
+  <section class="home-hero-v2" id="home">
+    <div class="container home-hero-grid-v2">
+      <div class="home-hero-copy-v2">
+        <div class="eyebrow">Hardware Security · Computer Security · Digital ASIC Design</div>
+        <h1>Ahmad <span>Shabani</span></h1>
+        <p class="lead">Postdoctoral researcher at KTH Royal Institute of Technology working across processor and GPU security, Hardware Trojan detection, PUF-based authentication, and trustworthy digital systems.</p>
+        <div class="hero-actions">
+          <a class="btn gold" href="#research-interests">Research interests</a>
+          <a class="btn" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="btn ghost" href="#contact-preview">Contact</a>
+        </div>
+      </div>
+      <aside class="home-signal-card" aria-label="Research profile summary">
+        <div class="signal-orbit"><span>GPU</span><span>ASIC</span><span>PUF</span></div>
+        <h2>Security across abstraction layers</h2>
+        <p>From physical hardware trust and digital circuits to microarchitectural behavior, firmware, and application-observable leakage.</p>
+        <div class="signal-tags">
+          <span>Hardware Trust</span><span>Side Channels</span><span>Processor Security</span><span>FPGA/SoC</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section home-scroll-map" aria-label="Website overview">
+    <div class="container">
+      <div class="home-strip">
+        <a href="#research-interests">Research</a>
+        <a href="#career-preview">Career</a>
+        <a href="#teaching-preview">Teaching</a>
+        <a href="#publications-preview">Publications</a>
+        <a href="#projects-preview">Projects</a>
+        <a href="#contact-preview">Contact</a>
       </div>
     </div>
-    <aside class="profile-card">
-      <img class="profile-photo" src="assets/img/ahmad-profile.png" alt="Portrait of Ahmad Shabani">
-      <div class="hero-stats">
-        <div class="stat"><strong>ASIC</strong><span>Design</span></div>
-        <div class="stat"><strong>GPU</strong><span>Security</span></div>
-        <div class="stat"><strong>PUF</strong><span>Auth.</span></div>
+  </section>
+
+  <section class="section compact" id="research-interests">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="kicker">Research interests</div><h2>Security-focused research with implementation depth.</h2></div>
+        <a class="btn ghost" href="publications.html">View publications</a>
       </div>
-    </aside>
-  </div>
-</section>
-<section class="section compact">
-  <div class="container grid three">
-    <article class="card accent"><div class="icon">▣</div><h3>Research identity</h3><p>Security across abstraction layers: from microarchitecture and processor behavior down to digital circuits and physical-level hardware trust.</p></article>
-    <article class="card purple"><div class="icon">◇</div><h3>Current direction</h3><p>Investigating hidden vulnerabilities in modern processors and GPUs, especially leakage channels and security-relevant performance behavior.</p></article>
-    <article class="card cyan"><div class="icon">✦</div><h3>Engineering depth</h3><p>Digital ASIC design, embedded Linux, FPGA/SoC development, smart-grid systems, automotive electronics, and IoT security applications.</p></article>
-  </div>
-</section>
+      <div class="interest-grid-v2">
+        <article class="interest-card-v2"><span class="interest-icon-v2 shield">HT</span><h3>Hardware Trojans & Security</h3><p>Detection and countermeasure methods for malicious modifications in integrated circuits and supply-chain-threat settings.</p></article>
+        <article class="interest-card-v2"><span class="interest-icon-v2 lock">PUF</span><h3>PUF-Based Authentication</h3><p>Lightweight authentication protocols and hardware primitives for low-cost secure identification.</p></article>
+        <article class="interest-card-v2"><span class="interest-icon-v2 trust">DfHT</span><h3>Design for Hardware Trust</h3><p>Design-time modifications and analysis flows that improve Trojan activation, observation, and trust verification.</p></article>
+        <article class="interest-card-v2"><span class="interest-icon-v2 power">LP</span><h3>Low-Power VLSI Design</h3><p>Efficient digital design and low-power architectures across ASIC and embedded systems.</p></article>
+        <article class="interest-card-v2 wide"><span class="interest-icon-v2 cpu">µA</span><h3>Transient Microarchitectural Attacks</h3><p>Security-observable behavior in processors and GPUs, including timing, scheduling, memory-system behavior, and performance-counter-visible effects.</p></article>
+      </div>
+    </div>
+  </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-head">
-      <div><div class="kicker">Profile</div><h2>Research with hardware-level intuition and system-level consequences.</h2></div>
-      <a class="btn ghost" href="education.html">Academic timeline</a>
+  <section class="section compact" id="career-preview">
+    <div class="container">
+      <div class="section-head"><div><div class="kicker">Career</div><h2>Selected milestones</h2></div><a class="btn ghost" href="career.html">Full career page</a></div>
+      <div class="timeline home-timeline-tight">
+        <div class="timeline-item" data-year="2025–"><h3>Postdoctoral Researcher · KTH Royal Institute of Technology</h3><p>Research on processor and GPU security, hidden vulnerabilities, and security-observable side effects.</p></div>
+        <div class="timeline-item" data-year="2024–"><h3>Assistant Professor · Amirkabir University of Technology</h3><p>Faculty role across computer architecture, logic design, cyber-physical systems, and digital system design automation.</p></div>
+        <div class="timeline-item" data-year="2021"><h3>Ph.D. · University of Tehran</h3><p>Dissertation on Hardware Trojan detection using Design for Hardware Trust, evaluated as excellent.</p></div>
+      </div>
     </div>
-    <div class="grid two">
-      <div class="card"><p>Ahmad Shabani is a researcher in hardware and computer security and digital ASIC design. His work focuses on efficient countermeasures against Hardware Trojans, lightweight PUF-based authentication protocols, and security analysis across multiple abstraction levels.</p><p>His academic path connects rigorous doctoral research in digital electronic systems with faculty teaching, industrial ASIC projects, embedded systems, and current postdoctoral research at KTH Royal Institute of Technology.</p></div>
-      <div class="card"><h3>Research focus</h3><div class="tags"><span class="tag">Hardware Trojans</span><span class="tag">PUF Authentication</span><span class="tag">GPU Security</span><span class="tag">Microarchitectural Security</span><span class="tag">Digital ASIC</span><span class="tag">Smart Grid Security</span><span class="tag">Embedded Linux</span><span class="tag">FPGA/SoC</span></div></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section compact">
-  <div class="container">
-    <div class="section-head"><div><div class="kicker">Highlights</div><h2>Selected milestones</h2></div></div>
-    <div class="timeline">
-      <div class="timeline-item" data-year="2025–"><h3>Postdoctoral Researcher · KTH Royal Institute of Technology</h3><p>Research on processor security and hidden vulnerabilities in modern computing platforms.</p></div>
-      <div class="timeline-item" data-year="2024–"><h3>Assistant Professor · Amirkabir University of Technology</h3><p>Faculty role in computer architecture, logic design, cyber-physical systems, and digital system design automation.</p></div>
-      <div class="timeline-item" data-year="2021"><h3>Ph.D. · University of Tehran</h3><p>Dissertation on Hardware Trojan detection using Design for Hardware Trust, evaluated as excellent.</p></div>
+  <section class="section compact home-preview-slab" id="teaching-preview">
+    <div class="container grid two">
+      <article class="home-preview-card"><div class="kicker">Teaching</div><h2>University-level teaching</h2><p>Courses in computer architecture, logic design, cyber-physical systems, digital design automation, embedded systems, and digital forensics.</p><a class="btn gold" href="teaching.html">Teaching page</a></article>
+      <article class="home-preview-card" id="publications-preview"><div class="kicker">Publications</div><h2>Research outputs</h2><p>Selected publications and source-code material in hardware security, PUF authentication, VLSI design, and microarchitectural security.</p><a class="btn gold" href="publications.html">Publications page</a></article>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="section compact" id="projects-preview">
+    <div class="container">
+      <div class="section-head"><div><div class="kicker">Projects</div><h2>Research prototypes and engineering systems.</h2></div><a class="btn ghost" href="projects.html">Projects page</a></div>
+      <div class="grid three home-project-strip">
+        <article class="card small"><h3>PMTP</h3><p>MAX-SAT-based Hardware Trojan detection flow using propagation of maximum transition probability.</p></article>
+        <article class="card small"><h3>PODEM</h3><p>Property-based design modification for hardware-Trojan detection in resource-constrained IoT devices.</p></article>
+        <article class="card small"><h3>SCS</h3><p>Partition-based test-pattern shuffling for side-channel-based Hardware Trojan detection.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section compact" id="contact-preview">
+    <div class="container">
+      <div class="home-contact-card">
+        <div><div class="kicker">Contact</div><h2>Academic collaboration and research discussion.</h2><p>Based at KTH Royal Institute of Technology, Stockholm, Sweden.</p></div>
+        <div class="home-contact-actions"><span class="email-obfuscated big">ahmadsh [at] kth [dot] se</span><a class="btn gold" href="contact.html">Contact page</a></div>
+      </div>
+    </div>
+  </section>
 </main>
 <footer class="footer">
   <div class="container footer-grid">
     <div>
       <strong>Ahmad Shabani</strong>
-      <div class="muted">Hardware & Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
+      <div class="muted">Hardware &amp; Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
     </div>
-    <div>
-      <a href="mailto:ahmadsh@kth.se">ahmadsh@kth.se</a> ·
-      <a href="https://kth.se/profile/ahmadsh" target="_blank">KTH Profile</a> ·
-      <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank">Google Scholar</a>
+    <div class="footer-links">
+      <span class="email-obfuscated">ahmadsh [at] kth [dot] se</span> ·
+      <a href="https://kth.se/profile/ahmadsh" target="_blank" rel="noopener">KTH Profile</a> ·
+      <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <div class="copyright">© <span data-current-year>2026</span> Ahmad Shabani. All rights reserved.</div>
     </div>
   </div>
 </footer>

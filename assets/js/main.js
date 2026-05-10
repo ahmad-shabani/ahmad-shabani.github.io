@@ -13,3 +13,7 @@ if (themeToggle) {
     localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
   });
 }
+
+document.querySelectorAll('[data-current-year]').forEach((node) => {
+  node.textContent = new Date().getFullYear();
+});
