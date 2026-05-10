@@ -161,7 +161,7 @@ h3 { font-size: 21px; letter-spacing: -.025em; line-height: 1.2; margin: 0 0 8px
 .timeline-item p { margin: 8px 0 0; color: var(--muted); }
 
 .page-hero { padding: 58px 0; color: #fff; background: linear-gradient(135deg, #11182f, #4e2a84); }
-.page-hero h1 { font-size: clamp(38px, 6vw, 64px); letter-spacing: -.055em; line-height: .96; margin: 12px 0; }
+.page-hero h1 { font-size: clamp(30px, 6vw, 64px); letter-spacing: -.055em; line-height: .96; margin: 12px 0; }
 .page-hero p { max-width: 780px; color: #dce6ff; font-size: 19px; margin: 0; }
 
 .split { display: grid; grid-template-columns: .85fr 1.15fr; gap: 22px; align-items: start; }
