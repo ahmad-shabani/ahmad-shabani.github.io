@@ -1227,3 +1227,34 @@ body:not(.dark) .home-hero-v2 .eyebrow { background: rgba(255,255,255,.11); bord
   .home-strip { border-radius: 22px; justify-content: flex-start; }
   .footer-links { text-align: left; }
 }
+
+
+.bio-link {
+  color: #70d7ff;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.bio-link::after {
+  content: " ↗";
+  font-size: 0.78em;
+  font-weight: 900;
+}
+
+.bio-link:hover {
+  color: #ffe788;
+  background: rgba(255, 231, 136, 0.08);
+  border-radius: 6px;
+}
+
+body:not(.dark) .bio-link {
+  color: #1268a8;
+}
+
+body:not(.dark) .bio-link:hover {
+  color: #7a4b00;
+  background: rgba(255, 214, 111, 0.22);
+}
