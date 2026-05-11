@@ -192,7 +192,7 @@
 
     .home-bio-side strong {
       color: var(--text, #111827);
-      font-size: .92rem;
+      font-size: 1.2rem;
       line-height: 1.35;
     }
 
@@ -200,7 +200,7 @@
 
     .home-bio-side span {
       color: var(--muted, #64748b);
-      font-size: .76rem;
+      font-size: .85rem;
       line-height: 1.45;
     }
 
@@ -774,15 +774,8 @@
           <span class="home-title-line"><strong>Postdoctoral Researcher</strong> at KTH Royal Institute of Technology</span><span class="home-title-line"><strong>Assistant Professor</strong> at Amirkabir University of Technology</span>
         </p>
         <div class="home-role-line">
-          <span>Postdoctoral Researcher · KTH</span>
-          <span>Assistant Professor · AUT</span>
-          <span>Digital ASIC Design</span>
-          <span>GPU Microarchitectural Security</span>
         </div>
         <div class="home-actions">
-          <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-          <a class="btn" href="publications.html">Publications</a>
-          <a class="btn ghost" href="#research-interests">Research interests</a>
         </div>
       </div>
 
@@ -799,30 +792,68 @@
     <div class="container">
       <div class="home-bio-card">
         <div>
-          <span class="career-section-kicker">01 · Bio</span>
           <h2>Biography</h2>
-          <p>
-           I am an Assistant Professor at Amirkabir University of Technology and has recently joined KTH University as a visiting researcher funded by  WASP.
-           My ongoing research primarily focuses on existing vulnerabilities against micro-architectural attacks particularly devoted to finding GPU and CPU side and covert channel attacks.
-           I also have several years of industrial experiences in digital ASIC design and HW-SW implementation for FPGAs and embedded systems.
-          </p>
-          <p>
-           My research interests include broader aspects in hardware security and trust domain such as hardware Trojans, PUF-based authentication, and side-channel aware implementation of digital systems. 
+      <p>
+        I am an <strong>Assistant Professor</strong> at 
+        <a class="bio-link" href="https://aut.ac.ir/en" target="_blank" rel="noopener">
+          Amirkabir University of Technology (AUT)
+        </a> 
+        and recently joined the 
+        <a class="bio-link" href="https://www.kth.se/nse" target="_blank" rel="noopener">
+          NSE Division
+        </a> 
+        at 
+        <a class="bio-link" href="https://www.kth.se/en" target="_blank" rel="noopener">
+          KTH Royal Institute of Technology
+        </a> 
+        as a <strong>Postdoctoral Researcher</strong> funded by <a class="bio-link" href="https://wasp-sweden.org/" target="_blank" rel="noopener">
+          WASP.
+        </a>
+      </p>
+      <p>
+        I received my Ph.D. in <strong>Digital Electronic Systems</strong> from the 
+          University of Tehran
+        </a>. 
+        Since then, my research has focused on different aspects of 
+        <strong>hardware security and trust</strong>, particularly 
+        <strong>Hardware Trojan detection</strong>, 
+        <strong>PUF-based authentication protocols</strong>, and 
+        <strong>microarchitectural attacks and defenses</strong>.
+      </p>
 
+      <p>
+        My current research explores <strong>microarchitectural vulnerabilities</strong> in modern heterogeneous computing platforms, 
+        with a particular focus on <strong>GPU side-channel attacks and defenses</strong>.
+      </p>
+
+      <p>
+        I have taught several university-level courses in 
+        <em>digital design</em>, <em>computer architecture</em>, <em>digital forensics</em>, and 
+        <em>cyber-physical systems</em>. I also have several years of industrial experience in 
+        <strong>digital ASIC design, including both front-end and back-end stages of integrated circuit design</strong>, 
+        the <strong>automotive industry</strong>, and 
+        <strong>hardware/software implementation</strong> for FPGAs and embedded systems.
+      </p>
+
+</p>
           </p>
           <div class="home-bio-actions">
             <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-            <a class="btn" href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="btn gold" href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="btn gold" href="https://ahmad-shabani.github.io/teaching.html" target="_blank" rel="noopener">Career Profile</a>
+
           </div>
         </div>
         <aside class="home-bio-side">
           <div>
             <strong>Research focus</strong><br>
-            <span>Security across hardware, microarchitecture, digital circuits, embedded software, and implementation-level behavior.</span>
+            <span>Working on hardware security, Hardware Trojans, and exploring micro-architectural attacks on GPU/CPU computing.</span>
           </div>
           <div>
             <strong>Current affiliation</strong><br>
-            <span>KTH Royal Institute of Technology, Stockholm, Sweden</span>
+            <span>      KTH University, Stockholm, Sweden.</span>
+            </p>
+            <span>      Amirkabir University, Tehran, Iran.</span>
           </div>
         </aside>
       </div>
@@ -848,13 +879,17 @@
     <div class="container">
       <div class="home-section-head">
         <div>
-          <span class="career-section-kicker">02 · Research interests</span>
-          <h2 class="home-section-title">Core research areas</h2>
+          <h2 class="home-section-title">Research interests</h2>
         </div>
         <a class="btn ghost" href="publications.html">View publications</a>
       </div>
 
       <div class="research-interest-grid">
+        <article class="research-interest-card">
+          <div class="research-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
+          <h3>Transient Microarchitectural Attacks</h3>
+          <p>Security-observable behavior in processors and GPUs, including timing, scheduling, and memory effects.</p>
+        </article>
         <article class="research-interest-card">
           <div class="research-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"/><path d="M9.2 12l1.8 1.8 4-4"/></svg></div>
           <h3>Hardware Trojans & Security</h3>
@@ -878,12 +913,6 @@
           <h3>Low-Power VLSI Design</h3>
           <p>Efficient digital design and low-power architectures for embedded systems.</p>
         </article>
-
-        <article class="research-interest-card">
-          <div class="research-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9zM9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg></div>
-          <h3>Transient Microarchitectural Attacks</h3>
-          <p>Security-observable behavior in processors and GPUs, including timing, scheduling, and memory effects.</p>
-        </article>
       </div>
     </div>
   </section>
@@ -892,7 +921,6 @@
     <div class="container">
       <div class="home-section-head">
         <div>
-          <span class="career-section-kicker">03 · Website</span>
           <h2 class="home-section-title">Explore my profile</h2>
         </div>
       </div>
@@ -941,12 +969,10 @@
     <div class="container">
       <div class="home-contact-mini">
         <div>
-          <span class="career-section-kicker">04 · Contact</span>
           <h2>Contact</h2>
           <p>KTH Royal Institute of Technology, Stockholm, Sweden.</p>
         </div>
         <div>
-          <span class="email-obfuscated">ahmadsh [at] kth [dot] se</span>
           <div style="margin-top:10px"><a class="btn gold" href="contact.html">Contact page</a></div>
         </div>
       </div>
@@ -961,7 +987,6 @@
       <div class="muted">Hardware &amp; Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
     </div>
     <div class="footer-links">
-      <span class="email-obfuscated">ahmadsh [at] kth [dot] se</span> ·
       <a href="https://kth.se/profile/ahmadsh" target="_blank" rel="noopener">KTH Profile</a> ·
       <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
       <div class="copyright">© <span data-current-year>2026</span> Ahmad Shabani. All rights reserved.</div>
