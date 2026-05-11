@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmad Shabani | Hardware & Computer Security Researcher</title>
   <meta name="description" content="Personal academic website of Ahmad Shabani, researcher in hardware security, computer security, GPU security, digital ASIC design, Hardware Trojans, and PUF-based authentication.">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
@@ -510,6 +511,240 @@
       }
       .home-bio-card { grid-template-columns: 1fr; }
     }
+
+    /* Home hero and bio readability refinement */
+    .home-hero-clean {
+      padding-top: 38px !important;
+      padding-bottom: 34px !important;
+    }
+
+    .home-hero-layout {
+      align-items: start !important;
+    }
+
+    .home-hero-layout > div:first-child {
+      padding-top: 28px !important;
+    }
+
+    .home-hero-title {
+      margin-top: 0 !important;
+      margin-bottom: 12px !important;
+      font-size: clamp(2.25rem, 3.6vw, 3.45rem) !important;
+      line-height: 0.98 !important;
+    }
+
+    .home-hero-subtitle {
+      display: grid !important;
+      gap: 7px !important;
+      margin-bottom: 18px !important;
+      max-width: 740px !important;
+      font-size: 1.03rem !important;
+      line-height: 1.55 !important;
+      color: rgba(238,244,255,0.92) !important;
+    }
+
+    body:not(.dark) .home-hero-subtitle {
+      color: #344158 !important;
+    }
+
+    .home-title-line {
+      display: block !important;
+    }
+
+    .home-title-line strong {
+      color: #ffffff !important;
+      font-weight: 950 !important;
+    }
+
+    body:not(.dark) .home-title-line strong {
+      color: #111827 !important;
+    }
+
+    .home-photo-card {
+      width: 285px !important;
+    }
+
+    .home-photo-frame {
+      aspect-ratio: 1 / 1.05 !important;
+    }
+
+    .home-bio-card,
+    .bio-section-card,
+    .bio-card-clean {
+      font-size: 1rem !important;
+      line-height: 1.72 !important;
+    }
+
+    .home-bio-card p,
+    .bio-section-card p,
+    .bio-card-clean p,
+    .home-bio-text p,
+    .bio-main p {
+      font-size: 0.97rem !important;
+      line-height: 1.72 !important;
+      color: #d6e0f5 !important;
+    }
+
+    body:not(.dark) .home-bio-card p,
+    body:not(.dark) .bio-section-card p,
+    body:not(.dark) .bio-card-clean p,
+    body:not(.dark) .home-bio-text p,
+    body:not(.dark) .bio-main p {
+      color: #3d4a63 !important;
+    }
+
+    .bio-side-card,
+    .bio-info-card,
+    .bio-highlight-card {
+      border-radius: 20px !important;
+      padding: 18px !important;
+      border: 1px solid rgba(112, 215, 255, 0.26) !important;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(255, 231, 136, 0.12), transparent 34%),
+        linear-gradient(135deg, rgba(112, 215, 255, 0.09), rgba(141, 92, 246, 0.06)),
+        rgba(20, 31, 52, 0.72) !important;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18) !important;
+    }
+
+    body:not(.dark) .bio-side-card,
+    body:not(.dark) .bio-info-card,
+    body:not(.dark) .bio-highlight-card {
+      background:
+        radial-gradient(circle at 12% 0%, rgba(255, 231, 136, 0.28), transparent 34%),
+        linear-gradient(135deg, #f7fbff, #eef6ff) !important;
+      border-color: rgba(18, 104, 168, 0.18) !important;
+      box-shadow: 0 12px 28px rgba(15,23,42,0.07) !important;
+    }
+
+    .bio-side-card + .bio-side-card,
+    .bio-info-card + .bio-info-card,
+    .bio-highlight-card + .bio-highlight-card {
+      margin-top: 12px !important;
+    }
+
+    .bio-side-card h3,
+    .bio-info-card h3,
+    .bio-highlight-card h3 {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin: 0 0 8px !important;
+      color: #ffffff !important;
+      font-size: 0.98rem !important;
+      line-height: 1.25 !important;
+      font-weight: 950 !important;
+      letter-spacing: -0.025em !important;
+    }
+
+    body:not(.dark) .bio-side-card h3,
+    body:not(.dark) .bio-info-card h3,
+    body:not(.dark) .bio-highlight-card h3 {
+      color: #111827 !important;
+    }
+
+    .bio-side-card h3::before,
+    .bio-info-card h3::before,
+    .bio-highlight-card h3::before {
+      content: "✦";
+      width: 24px;
+      height: 24px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #fff1a8, #ffd66f);
+      color: #111827;
+      font-size: 0.78rem;
+      flex: 0 0 24px;
+    }
+
+    .bio-side-card p,
+    .bio-info-card p,
+    .bio-highlight-card p {
+      margin: 0 !important;
+      color: #c9d5ec !important;
+      font-size: 0.84rem !important;
+      line-height: 1.65 !important;
+    }
+
+    body:not(.dark) .bio-side-card p,
+    body:not(.dark) .bio-info-card p,
+    body:not(.dark) .bio-highlight-card p {
+      color: #4b5872 !important;
+    }
+
+    .bio-info-stack,
+    .bio-side-stack,
+    .home-bio-aside {
+      display: grid !important;
+      gap: 12px !important;
+    }
+
+    @media (max-width: 840px) {
+      .home-hero-layout > div:first-child {
+        padding-top: 0 !important;
+      }
+      .home-hero-clean {
+        padding-top: 32px !important;
+      }
+      .home-photo-card {
+        width: 245px !important;
+      }
+    }
+
+
+    /* Split Research focus and Current affiliation into clearly separate boxes */
+    .bio-side-card,
+    .bio-info-card,
+    .bio-highlight-card {
+      display: block !important;
+      margin: 0 !important;
+    }
+
+    .bio-side-card + .bio-side-card,
+    .bio-info-card + .bio-info-card,
+    .bio-highlight-card + .bio-highlight-card {
+      margin-top: 14px !important;
+    }
+
+    .home-bio-aside,
+    .bio-side-stack,
+    .bio-info-stack {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 14px !important;
+      align-content: start !important;
+    }
+
+    .bio-side-card {
+      position: relative !important;
+      padding: 18px 18px 17px !important;
+      border-radius: 22px !important;
+      border: 1px solid rgba(112, 215, 255, 0.30) !important;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(255, 231, 136, 0.14), transparent 38%),
+        linear-gradient(135deg, rgba(112, 215, 255, 0.11), rgba(141, 92, 246, 0.07)),
+        rgba(20, 31, 52, 0.82) !important;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.20) !important;
+      overflow: hidden !important;
+    }
+
+    .bio-side-card::after {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 0 auto 0 !important;
+      height: 4px !important;
+      background: linear-gradient(90deg, #ffe788, #70d7ff, #8d5cf6) !important;
+      opacity: 0.95 !important;
+    }
+
+    body:not(.dark) .bio-side-card {
+      background:
+        radial-gradient(circle at 12% 0%, rgba(255, 231, 136, 0.30), transparent 38%),
+        linear-gradient(135deg, #ffffff, #eef6ff) !important;
+      border-color: rgba(18, 104, 168, 0.20) !important;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08) !important;
+    }
+
   </style>
 </head>
 <body>
@@ -534,12 +769,16 @@
   <section class="home-hero-clean" id="home">
     <div class="container home-hero-layout">
       <div>
+        <div class="home-kicker">Hardware & Computer Security</div>
         <h1 class="home-hero-title">Ahmad Shabani</h1>
         <p class="home-hero-subtitle">
-          Assistant Professor at Amirkabit University of Technology </h1>
-          Postdoctoral researcher at KTH Royal Institute of Technology
+          <span class="home-title-line"><strong>Postdoctoral Researcher</strong> · KTH Royal Institute of Technology</span><span class="home-title-line"><strong>Assistant Professor</strong> · Amirkabir University of Technology</span>
         </p>
         <div class="home-role-line">
+          <span>Postdoctoral Researcher · KTH</span>
+          <span>Assistant Professor · AUT</span>
+          <span>Digital ASIC Design</span>
+          <span>GPU Microarchitectural Security</span>
         </div>
         <div class="home-actions">
           <a class="btn gold" href="files/Ahmad_Shabani_CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -552,6 +791,7 @@
         <div class="home-photo-frame">
           <img src="assets/img/ahmad-profile.png" alt="Ahmad Shabani">
         </div>
+        <div class="home-photo-caption">KTH Royal Institute of Technology · Stockholm, Sweden</div>
       </aside>
     </div>
   </section>
@@ -560,6 +800,7 @@
     <div class="container">
       <div class="home-bio-card">
         <div>
+          <span class="career-section-kicker">01 · Bio</span>
           <h2>Biography</h2>
           <p>
             I am a postdoctoral researcher at KTH Royal Institute of Technology working in hardware and computer security.
@@ -608,6 +849,7 @@
     <div class="container">
       <div class="home-section-head">
         <div>
+          <span class="career-section-kicker">02 · Research interests</span>
           <h2 class="home-section-title">Core research areas</h2>
         </div>
         <a class="btn ghost" href="publications.html">View publications</a>
@@ -651,6 +893,7 @@
     <div class="container">
       <div class="home-section-head">
         <div>
+          <span class="career-section-kicker">03 · Website</span>
           <h2 class="home-section-title">Explore my profile</h2>
         </div>
       </div>
@@ -699,10 +942,12 @@
     <div class="container">
       <div class="home-contact-mini">
         <div>
+          <span class="career-section-kicker">04 · Contact</span>
           <h2>Contact</h2>
           <p>KTH Royal Institute of Technology, Stockholm, Sweden.</p>
         </div>
         <div>
+          <span class="email-obfuscated">ahmadsh [at] kth [dot] se</span>
           <div style="margin-top:10px"><a class="btn gold" href="contact.html">Contact page</a></div>
         </div>
       </div>
@@ -717,6 +962,7 @@
       <div class="muted">Hardware &amp; Computer Security · Digital ASIC Design · KTH Royal Institute of Technology</div>
     </div>
     <div class="footer-links">
+      <span class="email-obfuscated">ahmadsh [at] kth [dot] se</span> ·
       <a href="https://kth.se/profile/ahmadsh" target="_blank" rel="noopener">KTH Profile</a> ·
       <a href="https://scholar.google.com/citations?user=iU2Rx7UAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
       <div class="copyright">© <span data-current-year>2026</span> Ahmad Shabani. All rights reserved.</div>
